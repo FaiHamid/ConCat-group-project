@@ -1,0 +1,45 @@
+@import '../../styles/main';
+
+.Nav {
+  display: flex;
+  color: $white-color;
+  gap: 64px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    color: $secondary-color;
+
+    font-family: Mont, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    transition: color, 0.3s;
+
+    &:hover {
+      color: $accent-color;
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+.active {
+  position: relative;
+
+  color: $white-color;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+
+    background-color: $white-color;
+  }
+}

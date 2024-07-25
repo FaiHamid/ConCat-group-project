@@ -1,0 +1,83 @@
+@import '../../styles/main';
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  background-color: $black-color;
+  border: 1px solid $surface-2-color;
+
+  &__left {
+    display: flex;
+    gap: 16px;
+
+    @include on-desktop {
+      gap:24px
+    }
+  }
+
+  &__logo {
+    padding: 13px 16px;
+
+    @include on-desktop {
+      padding: 18px 24px;
+    }
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__favorites, &__cart, &__nav {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+
+  &__favorites, &__cart {
+    width: 48px;
+
+    @include on-desktop {
+      width: 64px;
+    }
+  }
+
+  &__favorites::before, &__cart::before  {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: $surface-2-color;
+  }
+}
+
+// Header burger-menu, change this code if u need it :) //
+
+.Header__menu {
+  width: 48px;
+
+  &>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  @include on-tablet {
+    display: none;
+  }
+
+  &::before  {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: $surface-2-color;
+  }
+}
+
+// Header burger-menu, end //
