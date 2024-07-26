@@ -1,7 +1,13 @@
 import { createRoot } from 'react-dom/client';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import { App } from './App';
 import { HomePage } from './modules/HomePage';
+import { NotFoundPage } from './pages/notFoundPage/NotFoundPage';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <Router>
@@ -24,7 +30,8 @@ createRoot(document.getElementById('root') as HTMLElement).render(
 
         <Route path="favorites" element={<h1>Favorites</h1>} />
         <Route path="cart" element={<h1>Cart</h1>} />
-        <Route path="*" element={<h1>NotFoundPage</h1>} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
-  </Router>);
+  </Router>,
+);

@@ -1,0 +1,44 @@
+@import '../../styles/main.scss';
+
+.pageNotFound {
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 64px;
+  }
+
+  &__title {
+    text-align: center;
+
+    color: var(--$white-color);
+    font-family: Mont, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 50px;
+
+    @include on-desktop {
+      font-size: 40px;
+      font-weight: 700;
+    }
+  }
+
+  &__imageWrapper {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    margin-block: 32px;
+  }
+
+  &__img {
+    object-fit: contain;
+    overflow: hidden;
+  }
+}
