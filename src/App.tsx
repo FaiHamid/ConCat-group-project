@@ -12,10 +12,10 @@ export const App: React.FC = () => {
           <div className="App__header">
             <Header />
           </div>
-          <div className="App__content">
+          <div id="page-top" className="App__content">
             <Outlet />
           </div>
-          <div className="App__footer">
+          <div className='App__footer'>
             <Footer />
           </div>
         </div>

@@ -46,12 +46,14 @@
     }
   }
   
+
   %h3-category{
     font-family: Mont, sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 26px;
   }
+
 
   %h4 {
     font-family: Mont, sans-serif;
@@ -94,3 +96,51 @@
     font-weight: 700;
     line-height: 15.34px;
   }
+
+
+  @mixin buttons {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  
+  @mixin primary-button {
+    @include buttons;
+  
+    padding: 0;
+    border: none;
+    color: $white-color;
+    background-color: $accent-color;
+    cursor: pointer;
+    outline: none;
+  
+    &:hover {
+      background-color: #a378ff;
+    }
+  }
+  
+  @mixin secondary-button {
+    padding: 0;
+    border: none;
+    background-color: $surface-2-color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    cursor: pointer;
+    outline: none;
+  
+    &:hover {
+      background-color: $icons-color;
+    }
+  
+    &:disabled {
+      background-color: transparent;
+      border: 1px solid $elements-color;
+    }
+  }
+
+  @mixin secondary-button-selected {
+    background-color: transparent;
+    border: 1px solid $elements-color;
+  }
+

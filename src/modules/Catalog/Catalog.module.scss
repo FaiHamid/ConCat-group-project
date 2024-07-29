@@ -1,0 +1,50 @@
+@import "../../styles/main.scss";
+
+.catalog {
+  padding-top: 24px;
+  @include content-padding-inline;
+}
+
+.breadCrumbs {
+  height: 16px;
+  width: 93px;
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.catalog_title {
+  @extend %h1;
+  margin-bottom: 8px;
+}
+
+.amount {
+  margin-bottom: 40px;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  height: 59px;
+  margin-bottom: 24px;
+}
+
+.sort{
+  background-color: aqua;
+  width: 176px;
+}
+
+.items_per_page{
+  background-color: aquamarine;
+  width: 128px;
+}
+
+.card_holder{
+  @include catalog-grid;
+  justify-content: center;
+
+}
+
+.card{
+  background-color: bisque;
+  height: 506px;
+}

@@ -55,6 +55,27 @@
   @include on-desktop {
     --columns: 24;
   }
+
+  @include on-tablet {
+    padding-inline: 24px;
+  }
+}
+
+@mixin uppercase {
+  text-transform: uppercase;
+}
+
+
+@mixin hover($property, $value) {
+  &:hover {
+    #{$property}: $value;
+  }
+}
+
+@mixin on-mobile {
+  @media (max-width: 639px) {
+    @content
+  }
 }
 
 @mixin common-margins {
@@ -69,3 +90,15 @@
   }
 }
 
+@mixin catalog-grid {
+  display: grid;
+  column-gap: 16px;
+  row-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(229px,1fr));
+}
+
+@mixin hover($property, $value) {
+  &:hover {
+    #{$property}: $value;
+  }
+}

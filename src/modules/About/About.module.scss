@@ -1,5 +1,18 @@
-.breadcrumbs {
-  width: 100px;
-  height: 100px;
+@import "../../styles/main.scss";
+
+.about{
+  padding-top: 24px;
+  @include content-padding-inline;
+}
+
+.breadCrumbs {
+  height: 16px;
+  width: 93px;
   background-color: white;
+  margin-bottom: 40px;
+}
+
+.about_title {
+  @extend %h1;
+  margin-bottom: 8px;
 }

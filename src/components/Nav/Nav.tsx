@@ -16,6 +16,7 @@ export const Nav: React.FC = () => {
           to={`/${page === 'home' ? '' : page}`}
           key={page}
           className={activeClass}
+          id={`/${page === 'home' ? '' : page}`}
         >
           {page}
         </NavLink>
