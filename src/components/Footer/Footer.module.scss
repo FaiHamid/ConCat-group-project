@@ -1,6 +1,6 @@
 @import '../../styles//main.scss';
+
 .footer {
-    background-color: #0F1121;
     padding: 20px 0;
     font-family: 'Montserrat', sans-serif;
     border-top: 1px #3B3E4A  solid;
@@ -27,26 +27,14 @@
     &__backToTop {
       display: flex;
       align-items: center;  
+      cursor: pointer;
       @media (max-width: 639px) {
         flex-direction: row;
         justify-content: center;
         gap: 10px;
-  
-        a {
-          margin-right: -2px;
-        }
-  
         
       }
     }
-  }
-
-  a {
-    color: gray;
-    text-decoration: none;
-    font-size: 12px;
-    text-transform: uppercase;
-    margin-right: 10px;
   }
   
   .arrow {
@@ -92,11 +80,8 @@
   .link {
     color: #fff;
     text-decoration: none;
-    font-size: 12px;
-    text-transform: uppercase;
     margin: 0 10px;
-    line-height: 11px;
-    letter-spacing: 2px;
+    @extend %text-uppercase;
 
     &:hover {
       text-decoration: underline;
@@ -104,10 +89,8 @@
   }
 
   .footer__textInfo{
-    padding-block: 10px;
+    padding: 10px 10px 10px 0;
+    color: gray;
+    @extend %text-small;
+    text-decoration: none;
   }
-
-  .footer__backToTop{
-    cursor: pointer;
-  }
-  
