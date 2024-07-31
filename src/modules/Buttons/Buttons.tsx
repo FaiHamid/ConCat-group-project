@@ -24,13 +24,11 @@ export const Buttons: React.FC<Props> = ({
   useEffect(() => {
     getProducts().then(setProducts);
   },[])
+
   const hasInCart = cart.some(item => item.id === getId(category, products, id));
 
   const onClickFavHandle = () => {
-    const itemId = getId(category, products, id);
-    if (itemId !== undefined) {
-      onUpdateFavorites(product);
-    }
+    onUpdateFavorites(product);
   };
 
   const onClickCart = () => {

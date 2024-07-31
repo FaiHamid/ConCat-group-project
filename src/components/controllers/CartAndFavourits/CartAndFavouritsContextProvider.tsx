@@ -29,9 +29,8 @@ export const CartAndFavouritsContextProvider: React.FC<Props> = ({ children }) =
   const handleAddToCart = (product: Product) => {
     const existingItem = cart.find(cartItem => cartItem.id === product.id);
     if (existingItem) {
-      setCart(cart.map(cartItem =>
-        cartItem.id === product.id ? { ...cartItem, amount: (cartItem.amount || 1) + 1 } : cartItem
-      ));
+      setCart(cart.filter(cartItem =>
+        cartItem.id !== product.id ));
     } else {
       setCart([...cart, { ...product, amount: 1 }]);
     }

@@ -95,7 +95,9 @@ export const Catalog: React.FC = () => {
 
   return (
     <div className={styles.catalog}>
-      <Breadcrumbs />
+      <div className={styles.breadCrumbs}>
+        <Breadcrumbs />
+      </div>
 
       <h1 className={styles.catalog_title}>{category}</h1>
       <p className={styles.amount}>{`${sortedProducts.length} models`}</p>
