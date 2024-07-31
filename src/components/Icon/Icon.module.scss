@@ -1,0 +1,47 @@
+@import '../../styles/main';
+
+.Icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.3s;
+      
+    width: 16px;
+    height: 16px;
+    
+    &:hover {
+        transform: scale(1.1);
+        transition-duration: 0.3s;
+    }
+  
+    &--counter {
+      height: 28px;
+      width: 28px;
+    }
+  
+    &__counter {
+      position: absolute;
+      top: 0;
+      right: 0;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      padding: 1px;
+      min-width: 14px;
+      height: 14px;
+      font-family: Mont,sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 11.5px;
+      text-align: center;
+      color: $white-color;
+  
+      background-color: $red-color;
+      border: 1px solid $black-color;
+      border-radius: 50%;
+    }
+  }

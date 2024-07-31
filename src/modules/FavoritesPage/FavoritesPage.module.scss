@@ -1,0 +1,78 @@
+@import '../../styles/main';
+
+.Favorites {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.active {
+    position: relative;
+
+    color: $white-color;
+  
+    &::after {
+      content: '';
+  
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+  
+      background-color: $white-color;
+    }
+}
+
+.Favourites{
+  margin-top: 40px;
+  @include content-padding-inline;
+}
+.titleFav{
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 56px;
+  letter-spacing: -1px;
+}
+.items{
+  color: #89939A;
+  font-size: 14px;
+  line-height: 21px;
+}
+.fav__container {
+  margin: 40px 0 40px;
+  display: grid;
+  grid-gap: 16px;
+  justify-content: center;
+
+  @media (max-width: 639px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) and (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.item__fav{
+  background-color: red;
+  width: 272px;
+  height: 506px;
+  margin: 0 auto;
+}
+
+.spanNav{
+  display: block;
+  margin-top: 24px;
+}

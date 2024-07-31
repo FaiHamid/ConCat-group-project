@@ -16,3 +16,55 @@
   @extend %h1;
   margin-bottom: 8px;
 }
+.back_link{
+  display: flex;
+  align-items: center; 
+  margin-bottom: 16px;
+}
+
+.back_text{
+  @extend %text-small;
+  color: $white-color;
+}
+
+.loader{
+  @include loader;
+}
+
+.title {
+  @extend %h2;
+  margin-bottom: 40px;
+}
+
+.image_container{
+  @include page-grid;
+}
+
+.small_images {
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    grid-column: 1/2;
+  }
+
+  @include on-desktop {
+    grid-column: 1/3;
+  }
+}
+
+.small_img {
+  width: 80px;
+  height: 80px;
+}
+
+.big_image {
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    grid-column: 2/8;
+  }
+
+  @include on-desktop {
+    grid-column: 3/13;
+  }
+}

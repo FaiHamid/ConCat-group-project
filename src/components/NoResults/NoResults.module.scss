@@ -1,0 +1,48 @@
+@import '../../styles/main';
+
+.NoResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px 0;
+
+  &__title {
+    color: $white-color;
+
+    @extend %h2;
+  }
+
+  &__img {
+    height: 40vh;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 48px;
+    width: 100%;
+
+    color: $white-color;
+    background-color: $accent-color;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $accent-color-hover;
+      transition-duration: 0.3s;
+    }
+
+    @extend %text-buttons;
+
+    @include on-tablet {
+      width: 320px;
+    }
+  }
+}

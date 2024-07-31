@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
 
   function scrollToTop() {
     window.scrollTo(0, 0);
-}
+  }
 
   return (
     <footer className={styles.footer}>

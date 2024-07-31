@@ -113,6 +113,7 @@
     background-color: $accent-color;
     cursor: pointer;
     outline: none;
+    transition-duration: 0.3s;
   
     &:hover {
       background-color: #a378ff;
@@ -128,9 +129,11 @@
     background-size: 16px;
     cursor: pointer;
     outline: none;
+    transition-duration: 0.3s;
   
     &:hover {
       background-color: $icons-color;
+
     }
   
     &:disabled {
@@ -142,5 +145,6 @@
   @mixin secondary-button-selected {
     background-color: transparent;
     border: 1px solid $elements-color;
+    transition-duration: 0.3s;
   }
 

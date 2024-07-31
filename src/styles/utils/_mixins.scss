@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;
@@ -74,7 +76,7 @@
 
 @mixin on-mobile {
   @media (max-width: 639px) {
-    @content
+    @content;
   }
 }
 
@@ -101,4 +103,11 @@
   &:hover {
     #{$property}: $value;
   }
+}
+
+@mixin loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 153px;
 }

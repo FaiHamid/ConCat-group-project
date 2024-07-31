@@ -9,9 +9,10 @@ import { Menu } from '../../modules/Menu'
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(prevState => !prevState);
+  const handleToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
+
 
   return (
     <header className={classes.Header}>
@@ -35,12 +36,20 @@ export const Header: React.FC = () => {
         </div>
 
         <div className={classes.Header__menu}>
-          <button type="button" onClick={toggleMenu}>
-            <img src="img/icons/Menu.svg" alt="burger-menu"/>
+          <button type="button" onClick={handleToggleMenu} aria-label="Toggle menu">
+          <img 
+              src={isMenuOpen ? "img/icons/Close.svg" : "img/icons/Menu.svg"} 
+              alt={isMenuOpen ? "close-menu" : "burger-menu"}
+            />
           </button>
         </div>
       </div>
-      {isMenuOpen && <Menu onClose={toggleMenu} />}
+      <Menu
+        isOpen={isMenuOpen}
+        onClickClose={handleToggleMenu}
+        favouritesCount={0}
+        cartCount={0}
+      />
     </header>
   );
 };

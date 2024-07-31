@@ -174,3 +174,7 @@
 .category_card:hover{
   transform: scale(1.05);
 }
+
+.loader{
+  @include loader;
+}

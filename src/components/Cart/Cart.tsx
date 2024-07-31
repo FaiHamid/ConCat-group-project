@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import classes from './Cart.module.scss';
@@ -11,9 +11,17 @@ const activeClass = ({ isActive }: { isActive: boolean }) => {
 };
 
 export const Cart: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [counter, setCounter] = useState(0);
+
+    useEffect(() => {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        setCounter(cartItems.length);
+      }, []);
+
     return (
         <NavLink className={activeClass} to="/cart">
-            <Icon icon={IconList.cart} />
+            <Icon icon={IconList.cart} counter={counter} />
         </NavLink>
     )
 }

@@ -32,9 +32,22 @@
         flex-direction: row;
         justify-content: center;
         gap: 10px;
+  
+        .footer__textInfo {
+          margin-right: -2px;
+        }
+  
         
       }
     }
+  }
+
+  .footer__textInfo {
+    color: gray;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-right: 10px;
   }
   
   .arrow {

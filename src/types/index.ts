@@ -1,1 +1,2 @@
-export * from './Phone';
+export * from './Item';
+export * from './Product';

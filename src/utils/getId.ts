@@ -1,4 +1,5 @@
-import { Product } from '../../types/Product';
+import { Product } from "../types";
+
 
 export const getId = (category: string, products: Product[], id: string): number | undefined => {
   switch (category) {

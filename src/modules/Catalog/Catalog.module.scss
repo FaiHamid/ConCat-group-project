@@ -1,6 +1,7 @@
-@import "../../styles/main.scss";
+@import '../../styles/main.scss';
 
 .catalog {
+  font-family: Mont, sans-serif;
   padding-top: 24px;
   @include content-padding-inline;
 }
@@ -15,10 +16,16 @@
 .catalog_title {
   @extend %h1;
   margin-bottom: 8px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 .amount {
   margin-bottom: 40px;
+  @extend %text-body;
+  color: $secondary-color;
 }
 
 .filters {
@@ -28,23 +35,48 @@
   margin-bottom: 24px;
 }
 
-.sort{
-  background-color: aqua;
+.sort {
   width: 176px;
+  @extend %text-small;
+  color: $secondary-color;
+  margin-bottom: 4px;
 }
 
-.items_per_page{
+.items_per_page {
   background-color: aquamarine;
   width: 128px;
 }
 
-.card_holder{
+.card_holder {
   @include catalog-grid;
   justify-content: center;
-
 }
 
-.card{
+.card {
   background-color: bisque;
   height: 506px;
+}
+
+.loader {
+  @include loader;
+}
+
+.sortFormControl,
+.pageFormControl {
+  height: 40px;
+  background-color: #323542;
+  border: none;
+  padding: 10px 12px;
+  text-indent: 4px;
+
+  @extend %text-buttons;
+  color: $white-color;
+}
+
+.sortFormControl {
+  width: 176px;
+}
+
+.pageFormControl {
+  width: 128px;
 }

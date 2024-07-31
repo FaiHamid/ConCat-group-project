@@ -1,9 +1,9 @@
-type PhoneDescription = {
+type ItemDescription = {
   title: string;
   text: string[];
 }
 
-export interface Phone {
+export interface Item {
   id: string;
   category: string;
   namespaceId: string;
@@ -15,7 +15,7 @@ export interface Phone {
   colorsAvailable: string[];
   color: string;
   images: string[];
-  description: PhoneDescription;
+  description: ItemDescription;
   screen: string;
   resolution: string;
   processor: string;

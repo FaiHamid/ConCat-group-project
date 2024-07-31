@@ -8,21 +8,11 @@ import { Buttons } from '../../modules/Buttons';
 type Props = {
   product: Product;
   discount?: boolean;
-  products: Product[];
-  favourites: Product[];
-  cart: Product[];
-  onAddToFavourites: (id: string) => void;
-  onAddToCart: (id: string) => void;
 };
 
 export const ProductCard: React.FC<Props> = ({ 
   product,
   discount,
-  products,
-  favourites,
-  cart,
-  onAddToFavourites,
-  onAddToCart,
 }) => {
   const {
     image,
@@ -92,13 +82,9 @@ export const ProductCard: React.FC<Props> = ({
       </div>
 
       <Buttons 
-        products={products}
-        favourites={favourites}
-        cart={cart}
-        onAddToFavourites={onAddToFavourites}
-        onAddToCart={onAddToCart}
-        category={category}
         id={itemId} 
+        category={category}
+        product={product}
       />
     </div>
   );

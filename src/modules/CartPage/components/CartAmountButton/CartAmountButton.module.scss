@@ -1,0 +1,19 @@
+@import '../../../../styles/main';
+
+.CartAmountButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+
+  background-color: $surface-2-color;
+  cursor: pointer;
+
+  @include hover(background-color, $icons-color);
+
+  &:disabled {
+    border: 1px solid $surface-2-color;
+    background-color: inherit;
+  }
+}
