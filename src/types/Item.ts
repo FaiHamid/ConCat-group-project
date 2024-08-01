@@ -15,7 +15,7 @@ export interface Item {
   colorsAvailable: string[];
   color: string;
   images: string[];
-  description: ItemDescription;
+  description: ItemDescription[];
   screen: string;
   resolution: string;
   processor: string;

@@ -1,0 +1,57 @@
+@import "../../styles/main.scss";
+
+.title_tech {
+  @extend %h3;
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.title_tech::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 47px;
+  width: 100%;
+  height: 0.5px;
+  background-color: $elements-color;
+}
+
+
+.info {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding-block: 8px;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $secondary-color;
+  }
+
+  &-key {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.34px;
+    text-align: left;
+
+
+    margin: 0;
+  }
+
+  &-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 15.34px;
+    text-align: right;
+    color: $white-color;
+    margin: 0;
+    text-align: right;
+    text-wrap: wrap;
+    font-weight: 700;
+  }
+}

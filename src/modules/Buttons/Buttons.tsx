@@ -4,25 +4,27 @@ import styles from './Buttons.module.scss';
 import { Product } from '../../types/Product';
 import { getId } from '../../utils/getId';
 import { useCartAndFavouritsContextContext } from '../../components/controllers/CartAndFavourits/useCartAndFavouritsContext';
-import { getProducts } from '../../api/dataFromServer';
+import { getQuickProducts } from '../../api/dataFromServer';
 
 type Props = {
   id: string;
   category: string;
   product: Product;
+  biggerButtons?: boolean;
 };
 
 export const Buttons: React.FC<Props> = ({
   id,
   category,
   product,
+  biggerButtons,
 }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const { cart, onAddToCart } = useCartAndFavouritsContextContext();
   const { favourites, onUpdateFavorites } = useCartAndFavouritsContextContext();
 
   useEffect(() => {
-    getProducts().then(setProducts);
+    getQuickProducts().then(setProducts);
   },[])
 
   const hasInCart = cart.some(item => item.id === getId(category, products, id));
@@ -42,7 +44,10 @@ export const Buttons: React.FC<Props> = ({
           className={classNames(
             styles.buttons__button,
             styles['buttons__button-cart'],
-            styles['buttons__button-cartActive']
+            styles['buttons__button-cartActive'],
+            {
+              [styles.biggerHeight]: biggerButtons,
+            }
           )}
           onClick={onClickCart}
         >
@@ -52,7 +57,10 @@ export const Buttons: React.FC<Props> = ({
         <button
           className={classNames(
             styles.buttons__button,
-            styles['buttons__button-cart']
+            styles['buttons__button-cart'],
+            {
+              [styles.biggerHeight]: biggerButtons,
+            }
           )}
           onClick={onClickCart}
         >
@@ -66,6 +74,7 @@ export const Buttons: React.FC<Props> = ({
           styles['buttons__button-fav'],
           {
             [styles['buttons__button-fav-selected']]: favourites.some(item => item.id === getId(category, products, id)),
+            [styles.biggerHeight]: biggerButtons,
           }
         )}
         onClick={onClickFavHandle}

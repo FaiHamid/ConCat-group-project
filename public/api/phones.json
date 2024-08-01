@@ -11,11 +11,11 @@
     "colorsAvailable": ["black", "green", "yellow", "white", "purple", "red"],
     "color": "black",
     "images": [
-      "/img/phones/apple-iphone-11/black/00.webp",
-      "/img/phones/apple-iphone-11/black/01.webp",
-      "/img/phones/apple-iphone-11/black/02.webp",
-      "/img/phones/apple-iphone-11/black/03.webp",
-      "/img/phones/apple-iphone-11/black/04.webp"
+      "img/phones/apple-iphone-11/black/00.webp",
+      "img/phones/apple-iphone-11/black/01.webp",
+      "img/phones/apple-iphone-11/black/02.webp",
+      "img/phones/apple-iphone-11/black/03.webp",
+      "img/phones/apple-iphone-11/black/04.webp"
     ],
     "description": [
       {
@@ -59,11 +59,11 @@
     "colorsAvailable": ["black", "green", "yellow", "white", "purple", "red"],
     "color": "green",
     "images": [
-      "/img/phones/apple-iphone-11/green/00.webp",
-      "/img/phones/apple-iphone-11/green/01.webp",
-      "/img/phones/apple-iphone-11/green/02.webp",
-      "/img/phones/apple-iphone-11/green/03.webp",
-      "/img/phones/apple-iphone-11/green/04.webp"
+      "img/phones/apple-iphone-11/green/00.webp",
+      "img/phones/apple-iphone-11/green/01.webp",
+      "img/phones/apple-iphone-11/green/02.webp",
+      "img/phones/apple-iphone-11/green/03.webp",
+      "img/phones/apple-iphone-11/green/04.webp"
     ],
     "description": [
       {
@@ -107,11 +107,11 @@
     "colorsAvailable": ["black", "green", "yellow", "white", "purple", "red"],
     "color": "purple",
     "images": [
-      "/img/phones/apple-iphone-11/purple/00.webp",
-      "/img/phones/apple-iphone-11/purple/01.webp",
-      "/img/phones/apple-iphone-11/purple/02.webp",
-      "/img/phones/apple-iphone-11/purple/03.webp",
-      "/img/phones/apple-iphone-11/purple/04.webp"
+      "img/phones/apple-iphone-11/purple/00.webp",
+      "img/phones/apple-iphone-11/purple/01.webp",
+      "img/phones/apple-iphone-11/purple/02.webp",
+      "img/phones/apple-iphone-11/purple/03.webp",
+      "img/phones/apple-iphone-11/purple/04.webp"
     ],
     "description": [
       {
@@ -155,11 +155,11 @@
     "colorsAvailable": ["black", "green", "yellow", "white", "purple", "red"],
     "color": "red",
     "images": [
-      "/img/phones/apple-iphone-11/red/00.webp",
-      "/img/phones/apple-iphone-11/red/01.webp",
-      "/img/phones/apple-iphone-11/red/02.webp",
-      "/img/phones/apple-iphone-11/red/03.webp",
-      "/img/phones/apple-iphone-11/red/04.webp"
+      "img/phones/apple-iphone-11/red/00.webp",
+      "img/phones/apple-iphone-11/red/01.webp",
+      "img/phones/apple-iphone-11/red/02.webp",
+      "img/phones/apple-iphone-11/red/03.webp",
+      "img/phones/apple-iphone-11/red/04.webp"
     ],
     "description": [
       {
@@ -203,11 +203,11 @@
     "colorsAvailable": ["black", "green", "yellow", "white", "purple", "red"],
     "color": "white",
     "images": [
-      "/img/phones/apple-iphone-11/white/00.webp",
-      "/img/phones/apple-iphone-11/white/01.webp",
-      "/img/phones/apple-iphone-11/white/02.webp",
-      "/img/phones/apple-iphone-11/white/03.webp",
-      "/img/phones/apple-iphone-11/white/04.webp"
+      "img/phones/apple-iphone-11/white/00.webp",
+      "img/phones/apple-iphone-11/white/01.webp",
+      "img/phones/apple-iphone-11/white/02.webp",
+      "img/phones/apple-iphone-11/white/03.webp",
+      "img/phones/apple-iphone-11/white/04.webp"
     ],
     "description": [
       {
@@ -1982,11 +1982,11 @@
     "colorsAvailable": ["black", "rosegold", "gold", "silver"],
     "color": "black",
     "images": [
-      "/img/phones/apple-iphone-7/black/00.webp",
-      "/img/phones/apple-iphone-7/black/01.webp",
-      "/img/phones/apple-iphone-7/black/02.webp",
-      "/img/phones/apple-iphone-7/black/03.webp",
-      "/img/phones/apple-iphone-7/black/04.webp"
+      "img/phones/apple-iphone-7/black/00.webp",
+      "img/phones/apple-iphone-7/black/01.webp",
+      "img/phones/apple-iphone-7/black/02.webp",
+      "img/phones/apple-iphone-7/black/03.webp",
+      "img/phones/apple-iphone-7/black/04.webp"
     ],
     "description": [
       {

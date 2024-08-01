@@ -9,3 +9,7 @@ export const getProducts = () => {
   return client.get<Product[]>('products.json');
 };
 
+export const getQuickProducts = () => {
+  return client.getQuick<Product[]>('products.json');
+};
+

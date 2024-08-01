@@ -3,23 +3,23 @@
 .about{
   padding-top: 24px;
   @include content-padding-inline;
+  @include page-grid;
+
+  // @include on-desktop {
+  //   column-gap: 64px;
+  // }
 }
 
 .breadCrumbs {
-  height: 16px;
-  width: 93px;
-  background-color: white;
   margin-bottom: 40px;
+  grid-column: 1/-1;
 }
 
-.about_title {
-  @extend %h1;
-  margin-bottom: 8px;
-}
 .back_link{
   display: flex;
   align-items: center; 
   margin-bottom: 16px;
+  grid-column: 1/-1;
 }
 
 .back_text{
@@ -29,42 +29,116 @@
 
 .loader{
   @include loader;
+  margin: 0 auto; 
+  width: (100vw);
+  min-width: 320px;
+
+
+  @include on-desktop {
+    width: 1136px;
+  }
+
+
 }
 
 .title {
   @extend %h2;
   margin-bottom: 40px;
-}
-
-.image_container{
-  @include page-grid;
-}
-
-.small_images {
   grid-column: 1/-1;
+}
+
+
+
+
+// first section
+
+.images_container{
+  grid-column: 1/5;
+  --columns: 4;
+  display: grid;
+  grid-auto-rows: repeat(2, auto); 
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+  margin-bottom: 40px;
 
   @include on-tablet {
-    grid-column: 1/2;
+    grid-auto-rows: repeat(1, auto); 
+    grid-column: 1/8;
+    --columns: 7;
+    margin-bottom: 64px;
   }
 
   @include on-desktop {
-    grid-column: 1/3;
+    grid-column: 1/13;
+    --columns: 12;
+    margin-bottom: 80px;
   }
 }
 
-.small_img {
-  width: 80px;
-  height: 80px;
-}
 
-.big_image {
-  grid-column: 1/-1;
+// second section
+
+.choice_params {
+  grid-column: 1/5;
+  margin-bottom: 56px;
 
   @include on-tablet {
-    grid-column: 2/8;
+    grid-column: 8/13;
   }
 
   @include on-desktop {
-    grid-column: 3/13;
+    grid-column: 14/21;
   }
 }
+
+
+// about
+
+.section_about {
+  grid-column: 1/-1;
+  margin-bottom: 32px;
+
+  @include on-desktop {
+    grid-column: 1/13;
+  }
+}
+
+.title_about {
+  @extend %h3;
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.title_about::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 47px;
+  width: 100%;
+  height: 0.5px;
+  background-color: $elements-color;
+}
+
+.text_title {
+  @extend %h4;
+  margin-bottom: 16px;
+  color: $white-color;
+}
+
+.text_about {
+  @extend  %text-body;
+  margin-bottom: 32px;
+  color: $secondary-color;
+}
+
+// tech
+
+.section_tech {
+  grid-column: 1/-1;
+  margin-bottom: 64px;
+
+  @include on-desktop {
+    grid-column: 14/25;
+  }
+}
+

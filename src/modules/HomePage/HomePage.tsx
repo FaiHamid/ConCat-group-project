@@ -43,7 +43,7 @@ export const HomePage: React.FC = () => {
           />
         ) : (
           <div className={classes.phones_slider_bottom}>
-            {/* {products.map(product => )} */}
+
             <ProductCard
               product={products[0]}
             />
