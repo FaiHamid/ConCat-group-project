@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { CartProduct, Product } from '../../../types';
+import { CartActions, CartProduct, Product } from '../../../types';
 import { CartAndFavouritsContext } from './CartAndFavouritsContext';
 import { useLocaleStorage } from '../../../utils/useLocaleStorage';
 
@@ -36,12 +36,39 @@ export const CartAndFavouritsContextProvider: React.FC<Props> = ({ children }) =
     }
   };
 
+  const handleDeleteFromCart = (product: Product) => {
+    setCart(cart.filter(cartItem =>
+      cartItem.id !== product.id ));
+  }
+
+  const updateCart = (product: CartProduct, action: CartActions) => {
+    switch (action) {
+      case CartActions.Increase:
+        setCart(cart.map(item => 
+          item.id === product.id && item.amount < 10 
+            ? { ...item, amount: item.amount + 1 } 
+            : item
+        ));
+        break;
+      
+        case CartActions.Decrease:
+          setCart(cart.map(item => 
+            item.id === product.id && item.amount > 1 
+              ? { ...item, amount: item.amount - 1 } 
+              : item
+          ))
+        break;
+    }
+  }
+
   const values = useMemo(
     () => ({
       cart,
       favourites,
       onAddToCart: handleAddToCart,
+      onDeleteFromCart: handleDeleteFromCart,
       onUpdateFavorites: updateFavorites,
+      onUpdateCart: updateCart,
     }),
     [cart, favourites],
   );

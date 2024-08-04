@@ -25,6 +25,13 @@
   color: $secondary-color;
 }
 
+.allfilters{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
 .filters {
   display: flex;
   gap: 16px;
@@ -46,6 +53,9 @@
 
 .card_holder {
   @include catalog-grid;
+}
+
+.card_holder_justify {
   justify-content: center;
 }
 
@@ -76,4 +86,9 @@
 
 .pageFormControl {
   width: 128px;
+}
+
+.search{
+  display: flex;
+  padding-bottom: 3px;
 }

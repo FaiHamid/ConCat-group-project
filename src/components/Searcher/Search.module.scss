@@ -1,0 +1,51 @@
+@import '../../styles/main.scss';
+
+.searchForm {
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+  position: relative;
+  height: 103px;
+
+  @include on-desktop {
+    display: flex;
+  }
+
+  @include on-tablet{
+    display: flex;
+  }
+
+  align-items: center;
+
+  &__input {
+    background-color: $black-color;
+    color: $white-color;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid $surface-2-color;
+    padding-inline: 20px;
+    padding-right: 50px;
+
+    &::placeholder {
+      color: $surface-2-color;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $white-color;
+    }
+  }
+
+  .clearButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform : translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: $icons-color;
+    z-index: 1;
+  }
+}

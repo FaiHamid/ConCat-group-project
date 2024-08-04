@@ -32,9 +32,14 @@
 .section_top_title{
   margin-bottom: 24px;
   color: $white-color;
-  @extend %h2;
+  @extend %h2-desktop;
 }
 
+.top_title {
+  @media (max-width: 455px) {
+    width: 200px;
+  }
+}
 
 .slider{
   margin-bottom: 56px;

@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import cn from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './About.module.scss';
-import { Item } from '../../types';
-import { getItems } from '../../api/dataFromServer';
+import { Item, Product } from '../../types';
+import { getItems, getQuickProducts } from '../../api/dataFromServer';
 import { ThreeCircles } from 'react-loader-spinner';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { ImageSelection } from '../../components/ImageSelection';
 import { ChoiceParams } from '../../components/ChoiceParams/ChoiceParams';
 import { ItemTechDetails } from '../../components/ItemTechDetails/ItemTechDetails';
+import { CarouselCards } from '../../components/CarouselCards';
 
 export const About: React.FC = () => {
   // const navigate = useNavigate();
   const { pathname } = useLocation();
   const [item, setItem] = useState<Item | null>(null);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeImage, setActiveImage] = useState('');
   
@@ -29,7 +33,6 @@ export const About: React.FC = () => {
   useEffect(() => {
     setIsLoading(true);
     setActiveImage('');
-
     getItems(category)
       .then(devices => {
         if (devices !== undefined) {
@@ -42,9 +45,22 @@ export const About: React.FC = () => {
       .finally(() => setIsLoading(false));
   }, [pathname]);
 
+  useEffect(() => {
+    getQuickProducts()
+      .then(devices => {
+        if (devices !== undefined) {
+          setProducts(devices);
+          setProduct(devices.find(device => device.itemId === itemId) || null);
+        }
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }, []);
   // function goBack() {
   //   navigate({ pathname })
   // }
+  const newModels = [...products].filter(device => device.fullPrice === item?.priceRegular  || device.price === item?.priceRegular || device.capacity === item?.capacity).slice(0, 10);
 
   return (
     <div className={styles.about}>
@@ -81,7 +97,7 @@ export const About: React.FC = () => {
           </section>
 
           <section className={styles.choice_params}>
-            <ChoiceParams item={item} />
+            {product && <ChoiceParams item={item} product={product}/>}
           </section>
 
           <section className={styles.section_about}>
@@ -100,6 +116,13 @@ export const About: React.FC = () => {
           <section className={styles.section_tech}>
             <ItemTechDetails item={item} />
           </section>
+
+        <section className={styles.phones_slider}>
+          <div className={styles.section_top}>
+            <h2 className={cn(styles.section_top_title, styles.top_title)}>You may also like</h2>
+          </div>
+            <CarouselCards products={newModels} topPlus={true}/>
+        </section>
           </>)}
         </>
       )}

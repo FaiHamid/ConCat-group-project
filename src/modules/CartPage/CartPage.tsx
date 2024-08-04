@@ -5,12 +5,12 @@ import { CartItem } from './components/CartItem';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { Modal } from './components/Modal';
 import { ModalContent } from './components/ModalContent';
-import { useLocaleStorage } from '../../utils/useLocaleStorage';
-import { CartProduct } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
+import { useCartAndFavouritsContextContext } from '../../components/controllers/CartAndFavourits/useCartAndFavouritsContext';
+import { CartActions } from '../../types';
 
 export const CartPage: React.FC = () => {
-  const [cart, setCart] = useLocaleStorage<CartProduct[]>('cartItems', []);
+  const {cart, onUpdateCart } = useCartAndFavouritsContextContext();
   const [sum, setSum] = useState(0);
   const [amount, setAmount] = useState(0);
   const [modalVisibility, setModalVisibility] = useState(false);
@@ -18,39 +18,12 @@ export const CartPage: React.FC = () => {
   useEffect(() => {
     const validCart = cart.filter(item => item.price !== undefined && item.amount !== undefined && item.amount > 0);
 
-    if (validCart.length !== cart.length) {
-      setCart(validCart);
-    }
-
     const total = validCart.reduce((p, item) => p + item.price * item.amount, 0);
     const quantity = validCart.reduce((p, item) => p + item.amount, 0);
 
     setSum(total);
     setAmount(quantity);
-  }, [cart, setCart]);
-
-  const increaseAmount = (id: number) => {
-    const updatedCart = cart.map(item => 
-      item.id === id && item.amount < 10 
-        ? { ...item, amount: item.amount + 1 } 
-        : item
-    );
-    setCart(updatedCart);
-  };
-
-  const decreaseAmount = (id: number) => {
-    const updatedCart = cart.map(item => 
-      item.id === id && item.amount > 1 
-        ? { ...item, amount: item.amount - 1 } 
-        : item
-    );
-    setCart(updatedCart);
-  };
-
-  const removeItem = (id: number) => {
-    const updatedCart = cart.filter(item => item.id !== id);
-    setCart(updatedCart);
-  };
+  }, [cart]);
 
   return (
     <div className={classes.CartPage}>
@@ -70,9 +43,8 @@ export const CartPage: React.FC = () => {
                 <CartItem
                   key={uuidv4()}
                   product={item}
-                  increaseAmount={() => increaseAmount(item.id)}
-                  decreaseAmount={() => decreaseAmount(item.id)}
-                  removeItem={() => removeItem(item.id)}
+                  increaseAmount={() => onUpdateCart(item, CartActions.Increase)}
+                  decreaseAmount={() => onUpdateCart(item, CartActions.Decrease)}
                 />
               ))}
             </div>

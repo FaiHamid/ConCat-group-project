@@ -5,7 +5,7 @@
   font-weight: 500;
   display: flex;
   list-style: none;
-  padding: 0;
+  padding: 20px;
   justify-content: center;
   margin: 20px 0;
   gap: 8px;
@@ -33,9 +33,9 @@
   color: $white-color;
 }
 
-a {
+li {
   background-color: transparent;
-  color: $white-color;
+  color: $white-color !important;
   text-decoration: none;
 }
 

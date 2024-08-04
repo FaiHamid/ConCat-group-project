@@ -8,6 +8,7 @@ export function useLocaleStorage<T>(
     const data = localStorage.getItem(key);
 
     if (data === null) {
+      
       localStorage.setItem(key, JSON.stringify(startValue));
 
       return startValue;

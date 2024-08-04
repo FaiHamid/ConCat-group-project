@@ -1,11 +1,13 @@
 import React from 'react';
-import { CartProduct, Product } from '../../../types';
+import { CartActions, CartProduct, Product } from '../../../types';
 
 export interface CartAndFavouritsContextType {
   cart: CartProduct[];
   favourites: Product[];
   onAddToCart: (product: Product) => void;
+  onDeleteFromCart: (product: Product) => void;
   onUpdateFavorites: (product: Product) => void;
+  onUpdateCart: (product: CartProduct, action: CartActions) => void;
 }
 
 export const CartAndFavouritsContext = React.createContext<CartAndFavouritsContextType>({
@@ -13,4 +15,6 @@ export const CartAndFavouritsContext = React.createContext<CartAndFavouritsConte
   favourites: [],
   onAddToCart: () => {},
   onUpdateFavorites: () => {},
+  onDeleteFromCart: () => {},
+  onUpdateCart: () => {},
 });

@@ -5,18 +5,19 @@ import { Icon } from "../../../../components/Icon";
 import { IconList } from "../../../../components/Icon/utils/IconList";
 import { CartAmountButton } from "../CartAmountButton";
 import { CartProduct } from "../../../../types";
+import { useCartAndFavouritsContextContext } from "../../../../components/controllers/CartAndFavourits/useCartAndFavouritsContext";
 
 type Props = {
   product: CartProduct;
   increaseAmount: () => void;
   decreaseAmount: () => void;
-  removeItem: () => void;
 };
 
 const MAX_PRODUCTS = 10;
 
-export const CartItem: React.FC<Props> = ({ product, increaseAmount, decreaseAmount, removeItem }) => {
+export const CartItem: React.FC<Props> = ({ product, increaseAmount, decreaseAmount }) => {
   const { image, name, price, amount } = product;
+  const { onDeleteFromCart } = useCartAndFavouritsContextContext();
 
   return (
     <article className={classes.CartItem}>
@@ -24,7 +25,7 @@ export const CartItem: React.FC<Props> = ({ product, increaseAmount, decreaseAmo
         <button
           className={classes.CartItem__remove}
           type="button"
-          onClick={removeItem}
+          onClick={() => onDeleteFromCart(product)}
         >
           <img src="img/icons/Close-grey.svg" alt="Remove" />
         </button>

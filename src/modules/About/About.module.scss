@@ -142,3 +142,22 @@
   }
 }
 
+// recomended
+
+.phones_slider {
+  @include common-margins;
+  grid-column: 1/-1;
+
+}
+
+.section_top_title{
+  margin-bottom: 24px;
+  color: $white-color;
+  @extend %h2-desktop;
+}
+
+.top_title {
+  @media (max-width: 455px) {
+    width: 200px;
+  }
+}
