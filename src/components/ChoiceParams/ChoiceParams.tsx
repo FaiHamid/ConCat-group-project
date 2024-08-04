@@ -109,7 +109,7 @@ export const ChoiceParams: React.FC<Props> = ({ item, product }) => {
               {discount ? (
                 <div className={styles.product__prices}>
                   <p className={cn(styles.product__price)}>
-                    ${item.priceDiscount}
+                    ${product.price}
                   </p>
                   <p
                     className={cn(
@@ -117,11 +117,11 @@ export const ChoiceParams: React.FC<Props> = ({ item, product }) => {
                       styles['product__price-discount'],
                     )}
                   >
-                    ${item.priceRegular}
+                    ${product.fullPrice}
                   </p>
                 </div>
               ) : (
-                <p className={styles.product__price}>${item?.priceRegular}</p>
+                <p className={styles.product__price}>${product.fullPrice}</p>
               )}
             </div>
 

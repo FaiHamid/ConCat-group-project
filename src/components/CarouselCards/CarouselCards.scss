@@ -64,10 +64,13 @@
   display: flex;
   gap: 16px;
   padding: 10px;
+  max-height: 506px;
 }
 
 .slick-slide{
   min-width: 212px;
+
+  height: 100%;
 
   @include on-tablet {
     min-width: 237px;

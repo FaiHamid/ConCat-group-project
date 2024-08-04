@@ -60,7 +60,15 @@ export const About: React.FC = () => {
   // function goBack() {
   //   navigate({ pathname })
   // }
-  const newModels = [...products].filter(device => device.fullPrice === item?.priceRegular  || device.price === item?.priceRegular || device.capacity === item?.capacity).slice(0, 10);
+  const newModels = [...products].filter(device => (device.fullPrice === item?.priceRegular  
+    || device.price === item?.priceRegular 
+    || device.capacity === item?.capacity)
+    && device.category === category).slice(0, 10);
+
+  if (newModels.length < 10) {
+    const firstTen = [...products].filter(device => device.category === category).slice(0, 10);
+    newModels.push(...firstTen);
+  }
 
   return (
     <div className={styles.about}>

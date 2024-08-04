@@ -1,5 +1,5 @@
 export type SearchParams = {
-  [key: string]: string | string[] | null;
+  [key: string]: string | null;
 };
 
 export function getSearchWith(
@@ -11,16 +11,10 @@ export function getSearchWith(
   Object.entries(paramsToUpdate).forEach(([key, value]) => {
     if (
       value === null ||
-      (key === 'page' && value === '1') ||
-      (key === 'perPage' && value === 'all')
+      (key === 'currentPage' && value === '1') ||
+      (key === 'itemsPerPage' && value === 'all')
     ) {
       newParams.delete(key);
-    } else if (Array.isArray(value)) {
-      newParams.delete(key);
-
-      value.forEach(part => {
-        newParams.append(key, part);
-      });
     } else {
       newParams.set(key, value);
     }

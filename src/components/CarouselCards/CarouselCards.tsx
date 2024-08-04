@@ -24,7 +24,7 @@ const CustomNextArrow: React.FC<PropsArrow> = ({
       style={{ ...style }}
       onClick={onClick}
     >
-      <img src="./img/icons/Vector-right.svg" alt="" className="icon"/>
+      <img src="/img/icons/Vector-right.svg" alt="" className="icon"/>
     </div>
   );
 };
@@ -41,7 +41,7 @@ const CustomPrevArrow: React.FC<PropsArrow> = ({
       style={{ ...style }}
       onClick={onClick}
     >
-      <img src="./img/icons/Vector-left.svg" alt="" className="icon"/>
+      <img src="/img/icons/Vector-left.svg" alt="" className="icon"/>
     </div>
   );
 };

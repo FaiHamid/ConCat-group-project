@@ -1,38 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import { ThreeCircles } from 'react-loader-spinner';
 import styles from './Catalog.module.scss';
 import { Pagination } from '../../components/Pagination';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { Product } from '../../types';
 import { getProducts } from '../../api/dataFromServer';
-import { ThreeCircles } from 'react-loader-spinner';
-import { useLocation, useSearchParams } from 'react-router-dom';
 import { ProductCard } from '../../components/ProductCard';
 import { SortOptions } from '../../types/SortOptions';
-import { Search } from '../../components/Searcher';
-
-const sortProducts = (products: Product[], sortBy: string) => {
-  const sortedProducts = [...products];
-
-  switch (sortBy) {
-    case SortOptions.Newest: 
-      return sortedProducts.sort(
-        (product1, product2) => product2.year - product1.year,
-      );
-    
-    case SortOptions.Alphabetically:
-      return sortedProducts.sort((product1, product2) =>
-        product1.name.localeCompare(product2.name),
-      );
-    
-    case SortOptions.Cheapest:
-      return sortedProducts.sort(
-        (product1, product2) => product1.price - product2.price,
-      );
-  }
-
-  return sortedProducts;
-};
+import { getSearchWith, SearchParams, sortProducts } from '../../utils';
 
 const DEFAULT_ITEM_PER_PAGE = 16;
 
@@ -43,10 +20,10 @@ export const Catalog: React.FC = () => {
 
   const sortBy = searchParams.get('sortBy') || SortOptions.Newest;
   const currentPage = +(searchParams.get('currentPage') || 1);
-  const itemsPerPage = +(searchParams.get('itemsPerPage') || DEFAULT_ITEM_PER_PAGE);
+  const itemsPerPage = +(
+    searchParams.get('itemsPerPage') || DEFAULT_ITEM_PER_PAGE
+  );
   const searchQuery = searchParams.get('query') || '';
-
-  const ALL_OPTIONS = { 4: 4, 8: 8, 16: 16, all: products.length };
 
   const { pathname } = useLocation();
 
@@ -59,34 +36,47 @@ export const Catalog: React.FC = () => {
       .finally(() => setIsLoading(false));
   }, [pathname]);
 
+  
+  function setSearchWith(params: SearchParams) {
+    const search = getSearchWith(searchParams, params);
+    setSearchParams(search);
+  }
+  
   const handlePageChange = (page: number) => {
     const params = new URLSearchParams(searchParams);
     params.set('currentPage', `${page}`);
-    setSearchParams(params);
+    setSearchWith({ 'currentPage': `${page}` });
+  };
+  const handleQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.value;
+    setSearchWith({ 'query': newValue })
   };
 
+  const clearSearch = () => {
+    setSearchWith({ query: null });
+  };
 
   const category = pathname.split('/')[1];
 
+  
+  const ALL_OPTIONS = { 4: 4, 8: 8, 16: 16, all: products
+    .filter(item => item.category === category)
+    .length };
+
   const filteredProducts = products
     .filter(product => product.category === category)
-    .filter(product => product.name.toLowerCase().includes(searchQuery.toLowerCase()));
-
+    .filter(product =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
 
   const sortedProducts = sortProducts(filteredProducts, sortBy);
 
   const changeItemsPerPage = (value: string) => {
-    const params = new URLSearchParams(searchParams);
-
-    params.set('itemsPerPage', value);
-    params.set('currentPage', '1');
-    setSearchParams(params);
+    setSearchWith({'itemsPerPage': value, 'currentPage': '1'});
   };
 
   const handleSortBy = (value: string) => {
-    const params = new URLSearchParams(searchParams);
-    params.set('sortBy', value);
-    setSearchParams(params);
+    setSearchWith({ 'sortBy': value });
   };
 
   const totalItems = sortedProducts.length;
@@ -136,11 +126,27 @@ export const Catalog: React.FC = () => {
             </select>
           </div>
         </div>
-          <div className={styles.search}>
-            <Search />
-          </div>
+        <div className={styles.search}>
+          <form className={styles.searchForm}>
+            <input
+              value={searchQuery}
+              type="text"
+              className={styles.searchForm__input}
+              placeholder="Search"
+              onChange={handleQueryChange}
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                className={styles.clearButton}
+                onClick={clearSearch}
+              >
+                &times;
+              </button>
+            )}
+          </form>
+        </div>
       </div>
-
 
       {isLoading ? (
         <ThreeCircles
@@ -154,12 +160,13 @@ export const Catalog: React.FC = () => {
         />
       ) : (
         <>
-          <ul className={cn(styles.card_holder, {[styles.card_holder_justify]: currentItems.length > 3 })}>
+          <ul
+            className={cn(styles.card_holder, {
+              [styles.card_holder_justify]: currentItems.length > 3,
+            })}
+          >
             {currentItems.map(product => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
+              <ProductCard key={product.id} product={product} />
             ))}
           </ul>
 

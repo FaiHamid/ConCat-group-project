@@ -8,11 +8,12 @@ import debounce from 'lodash.debounce';
 export const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [value, setValue] = useState('');
+  const searchQuery = searchParams.get('query') || '';
 
+  // console.log('search', searchParams);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function setSearchWith(params: any) {
     const search = getSearchWith(searchParams, params);
-
     setSearchParams(search);
   }
 
@@ -38,7 +39,7 @@ export const Search = () => {
   return (
     <form className={styles.searchForm}>
       <input
-        value={value}
+        value={searchQuery}
         type="text"
         className={styles.searchForm__input}
         placeholder="Search"
