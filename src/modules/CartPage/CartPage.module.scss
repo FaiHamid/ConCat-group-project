@@ -96,3 +96,38 @@
       }
   }
 }
+
+.lightTheme {
+  .home__link {
+    color: $white-color;
+  }
+
+  .CartPage__total {
+    border: 1px solid $white-theme-elements;
+  }
+
+  .CartPage__sum {
+    color: $white-theme-primary
+  }
+
+  .CartPage__number {
+    color: $white-theme-secondary;
+  }
+
+  .CartPage__line {
+    background-color: $white-theme-elements;
+  }
+
+  .CartPage__button {
+    color: $white-theme-white;
+    background-color: $white-theme-primary;
+  }
+
+  .CartPage__button:hover {
+    background-color: $white-theme-secondary;
+  }
+
+  h2 {
+    color: $white-theme-primary;
+  }
+}

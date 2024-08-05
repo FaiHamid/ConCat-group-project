@@ -46,3 +46,18 @@
     }
   }
 }
+
+.lightTheme {
+  .NoResults__title {
+    color: $white-theme-primary;
+  }
+
+  .NoResults__button {
+    color: $white-theme-white;
+    background-color: $white-theme-primary;
+  }
+
+  .NoResults__button:hover {
+    background-color: $white-theme-secondary;
+  }
+}

@@ -43,3 +43,17 @@
         @include hover(background-color, $accent-color-hover);
     }
 }
+
+.lightTheme {
+    background-color: $white-theme-white;
+    border: 1px solid $white-theme-secondary;
+
+    .ModalContent__button {
+        background-color: $white-theme-primary;
+        transition: background-color 0.3s ease;
+    }
+
+    .ModalContent__button:hover {
+        background-color: $white-theme-secondary;
+    }
+}

@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import cn from 'classnames';
 import { ProductCard } from '../ProductCard';
 import { Product } from '../../types';
+import { useTheme } from '../../contexts/ThemeContext';
 import './CarouselCards.scss';
 
 interface PropsArrow {
@@ -18,9 +19,15 @@ const CustomNextArrow: React.FC<PropsArrow> = ({
   onClick,
   topPlus = false,
 }) => {
+  const { theme } = useTheme();
+
   return (
     <div
-      className={cn(`${className} carousel-arrow carousel-arrow--next`, {top: topPlus})}
+      className={cn(
+        `${className} carousel-arrow carousel-arrow--next`,
+        { top: topPlus },
+        { 'light-theme': theme === 'light', 'dark-theme': theme === 'dark' }
+      )}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -35,9 +42,15 @@ const CustomPrevArrow: React.FC<PropsArrow> = ({
   onClick,
   topPlus = false,
 }) => {
+  const { theme } = useTheme();
+
   return (
     <div
-      className={cn(`${className} carousel-arrow carousel-arrow--prev`, {top: topPlus})}
+      className={cn(
+        `${className} carousel-arrow carousel-arrow--prev`,
+        { top: topPlus },
+        { 'light-theme': theme === 'light', 'dark-theme': theme === 'dark' }
+      )}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -52,6 +65,8 @@ interface Props {
 }
 
 export const CarouselCards: React.FC<Props> = ({ products, topPlus }) => {
+  const { theme } = useTheme();
+
   const settings = {
     dots: false,
     infinite: true,
@@ -63,7 +78,7 @@ export const CarouselCards: React.FC<Props> = ({ products, topPlus }) => {
   };
 
   return (
-    <div className="carousel-container">
+    <div className={cn('carousel-container', { 'light-theme': theme === 'light', 'dark-theme': theme === 'dark' })}>
       <Slider {...settings}>
         {products.map(product => (
           <ProductCard product={product} key={product.id} />

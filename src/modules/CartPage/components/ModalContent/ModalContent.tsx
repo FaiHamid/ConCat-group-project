@@ -1,25 +1,33 @@
-import React from "react";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import classes from './ModalContent.module.scss';
+import { useTheme } from "../../../../contexts/ThemeContext";
+import classNames from "classnames";
 
 type Props = {
-    closeModal: () => void;
+  closeModal: () => void;
 };
 
 export const ModalContent: React.FC<Props> = ({ closeModal }) => {
-  return (
-    <div className={classes.ModalContent}>
-        <h2>
-        Checkout is not implemented yet.
-        <br />
-        See you soon :)
-        </h2>
 
-        <button
-        className={classes.ModalContent__button}
-        onClick={closeModal}
+  const { theme } = useTheme();
+  const { t } = useTranslation();
+  
+  return (
+    <div className={classNames(classes.ModalContent, {
+            [classes.lightTheme]: theme === 'light',
+            [classes.darkTheme]: theme === 'dark',
+        })}
         >
+        <h2>
+         {t('cart.checkoutNot')}
+        <br />
+        {t('cart.seeYou')}
+      </h2>
+
+      <button className={classes.ModalContent__button} onClick={closeModal}>
         Ok
-        </button>
+      </button>
     </div>
   );
 };

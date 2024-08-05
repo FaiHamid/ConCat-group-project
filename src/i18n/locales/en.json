@@ -1,0 +1,98 @@
+{
+  "welcome": "Welcome to Gadgets Depot store!",
+  "nav": {
+    "home": "Home",
+    "phones": "Phones",
+    "tablets": "Tablets",
+    "accessories": "Accessories",
+    "cart": "Cart"
+  },
+  "sliders": {
+    "new": "Brand new models",
+    "hot": "Hot prices",
+    "also": "You also may like"
+  },
+  "categories": {
+    "title": "Shop by category",
+    "mobile": "Mobile phones",
+    "tablets": "Tablets",
+    "accessories": "Accessories",
+    "models": "models"
+  },
+  "buttons": {
+    "cart": "Add to cart",
+    "cart-added": "Added",
+    "fav": "Add to favourites",
+    "goHome": "GO HOME"
+  },
+  "pageTitles": {
+    "phones": "phones",
+    "tablets": "tablets",
+    "accessories": "accessories",
+    "fav": "Favorites"
+  },
+  "catalog": {
+    "sortBy": "Sort by",
+    "itemsOnPage": "Items on page"
+  },
+  "footer": {
+    "contacts": "contacts",
+    "rights": "rights",
+    "top": "back to top"
+  },
+  "productCard": {
+    "tech": "Tech specs",
+    "screen": "Screen",
+    "capacity": "Capacity",
+    "ram": "RAM",
+    "resolution": "Resolution",
+    "processor": "Processor",
+    "camera": "Camera",
+    "zoom": "Zoom",
+    "cell": "Cell",
+    "addToCart": "Add to cart",
+    "added": "Added",
+    "color": "Available colors",
+    "selectCapacity": "Select capacity",
+    "search": "Search"
+  },
+  "empty": {
+    "fav": "Your favourites is empty",
+    "cart": "Your cart is empty",
+    "404": "Oooops! Page not found..."
+  },
+  "sortBy": {
+    "Newest": "Newest",
+    "Alphabetically": "Alphabetically",
+    "Cheapest": "Cheapest",
+    "4": "4",
+    "8": "8",
+    "16": "16",
+    "All": "All"
+  },
+  "cart": {
+    "total": "Total for",
+    "item": "item",
+    "items": "items",
+    "checkout": "Checkout",
+    "checkoutNot": "Checkout is not implemented yet.",
+    "seeYou": "See you soon :)"
+  },
+  "contactsPage": {
+    "contacts": "Contacts",
+    "names": {
+      "faiza": "Faiza Hamid",
+      "igor": "Igor Omelianenko",
+      "sofiia": "Sofiia Priyemska",
+      "artem": "Artem Kasprukov",
+      "oleksii": "Oleksii Knihin"
+    },
+    "quotes": {
+      "faiza": "(c)Talent is persistent work",
+      "igor": "(c)The key to success is self-regulation, discipline, and belief in oneself.",
+      "sofiia": "(c)Learning is not about time. Learning is about effort.",
+      "artem": "(c)Programming: the art of turning coffee into code.",
+      "oleksii": "(c)Treat people the way you want them to treat you."
+    }
+  }
+}

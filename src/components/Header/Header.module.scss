@@ -7,13 +7,14 @@
 
   background-color: $black-color;
   border: 1px solid $surface-2-color;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 
   &__left {
     display: flex;
     gap: 16px;
 
     @include on-desktop {
-      gap:24px
+      gap: 24px;
     }
   }
 
@@ -29,7 +30,10 @@
     display: flex;
   }
 
-  &__favorites, &__cart, &__nav {
+  &__favorites,
+  &__cart,
+  &__nav,
+  &__settings {
     display: none;
 
     @include on-tablet {
@@ -37,7 +41,9 @@
     }
   }
 
-  &__favorites, &__cart {
+  &__favorites,
+  &__cart,
+  &__settings {
     width: 48px;
 
     @include on-desktop {
@@ -45,7 +51,9 @@
     }
   }
 
-  &__favorites::before, &__cart::before  {
+  &__favorites::before,
+  &__cart::before,
+  &__settings::before {
     content: '';
     width: 1px;
     height: 100%;
@@ -53,12 +61,25 @@
   }
 }
 
-// Header burger-menu, change this code if u need it :) //
+.Header__settings {
+  width: 48px;
+
+  @include on-desktop {
+    width: 64px;
+  }
+
+  & > button {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Header burger-menu //
 
 .Header__menu {
   width: 48px;
 
-  &>button {
+  & > button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +94,7 @@
     display: none;
   }
 
-  &::before  {
+  &::before {
     content: '';
     width: 1px;
     height: 100%;
@@ -82,3 +103,35 @@
 }
 
 // Header burger-menu, end //
+
+
+.lightTheme {
+  background-color: $white-theme-white;
+  color: $black-color;
+  border: 1px solid $white-theme-elements;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+
+  .Header__favorites::before, .Header__cart::before, .Header__settings::before  {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: $white-theme-elements;
+  }
+
+  .Header__menu > button {
+    border-left: 0.5px solid $white-theme-elements;
+  }
+}
+
+.lightTheme > * {
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.nav_LngBtn {
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 20px;
+  font-size: 22px;
+}
+

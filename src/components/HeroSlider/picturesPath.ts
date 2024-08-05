@@ -15,12 +15,12 @@
       id: 3,
       category: 'tablets',
       mobile: 'img/hero-slider/banner-tablets-mobver.png',
-      desktop: 'img/hero-slider/banner-tablets.png',
+      desktop: 'img/hero-slider/banner-tablets2.png',
     },
     {
       id: 4,
       category: 'accessories',
       mobile: 'img/hero-slider/banner-accessories-mobver.png',
-      desktop: 'img/hero-slider/banner-accessories.png',
+      desktop: 'img/hero-slider/banner-accessories2.png',
     },
   ];

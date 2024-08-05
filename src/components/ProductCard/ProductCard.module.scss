@@ -2,17 +2,21 @@
 
 .product {
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: inherit;
-  border: 1px solid $surface-1-color;
   padding: 31px;
   overflow: hidden;
+  border: 1px solid $surface-1-color;
   position: relative;
+
+
 
   @include on-desktop {
     transition: transform 0.4s ease-out;
+    height: 506px ;
 
   }
 
@@ -128,8 +132,8 @@
   &__line {
     margin-block: 8px;
     display: block;
-    height: 1px;
     background-color: $elements-color;
+    height: 1px;
   }
 }
 
@@ -171,5 +175,75 @@
     text-align: right;
     text-wrap: wrap;
     font-weight: 700;
+  }
+}
+
+.lightTheme {
+  border: 1px solid $white-theme-elements;
+
+  &::before {
+    top: -250px;
+    display: block;
+    content: '';
+    position: absolute;
+    width: 50% ;
+    height: 200%;
+    background: $white-theme-white;
+    transform: rotate(15deg);
+    z-index: -2;
+  }
+
+  &:hover::before {
+    background-color: $white-theme-green;
+    animation: animate2 2s linear infinite;
+  }
+
+  @keyframes animate2 {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+    
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background-color: $white-theme-white;
+    z-index: -1;
+  }
+
+  .product__title{
+    color: $white-theme-primary;
+  }
+
+  .product__title:hover{
+    color: $white-theme-secondary;
+  }
+
+  .product__line {
+    background-color: $white-theme-elements;
+  }
+
+  .product__price {
+    color: $white-theme-primary;
+  }
+
+  .product__price-discount {
+    color: $white-theme-secondary;
+  }
+
+  .info__screen,
+  .info__capacity,
+  .info__ram {
+    color: $white-theme-secondary;
+  }
+  
+  .info-value {
+    color: $white-theme-primary;
   }
 }

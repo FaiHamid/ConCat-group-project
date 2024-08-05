@@ -1,0 +1,11 @@
+@import "../styles/main.scss";
+
+.toggleButton {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color, 0.3s, background-color, 0.3s;
+}
+

@@ -26,12 +26,13 @@ $desktop-height-img: 400px;
 
   &__image {
     height: 100%;
-    width: 90%;
+    width: 100%;
     margin: auto;
-    object-fit: contain;
+    object-fit: cover;
 
     @include on-tablet {
       object-fit: contain;
+      width: 90%;
     }
   }
 }
@@ -95,6 +96,37 @@ $desktop-height-img: 400px;
 
     &--prev {
       left: 0;
+    }
+  }
+}
+
+.lightTheme {
+  transition: color, 0.3s;
+
+  .slick-dots {
+    li {
+      button:before {
+        content: '';
+        background-color: $white-theme-elements;
+      }
+    }
+  
+    .slick-active {
+      button:before {
+        background-color: $white-theme-primary; /* Set the color of the active dot */
+      }
+    }
+  }
+
+  @include on-tablet {
+    .custom-arrow {
+      background-color: $white-theme-white;
+      border: 1px solid $white-theme-icons;
+      color: $white-color;
+    }
+    
+    .custom-arrow::before {
+        color: $white-theme-icons;
     }
   }
 }

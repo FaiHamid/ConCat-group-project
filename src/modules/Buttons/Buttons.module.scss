@@ -43,3 +43,31 @@
 .biggerHeight{
   height: 48px;
 }
+
+.lightTheme {
+  .buttons__button-cart {
+    color: $white-theme-white;
+    background-color: $white-theme-primary ;
+  }
+
+  .buttons__button-cart:hover {
+    box-shadow: 0px 3px 13px 0px rgba(23, 32, 49, 0.4);
+  }
+
+  .buttons__button-cartActive {
+    border: 1px solid $white-theme-elements;
+    color: $white-theme-green;
+    background-color: $white-theme-white;
+  }
+
+  .buttons__button-fav {
+    background-color: $white-theme-white;
+    border: 1px solid $white-theme-elements;
+    
+    background-image: url(/img/icons/Favourites-light.svg);
+  }
+  
+  .buttons__button-fav-selected {
+    background-image: url(/img/icons/Favourites-Added.svg);
+  }
+}

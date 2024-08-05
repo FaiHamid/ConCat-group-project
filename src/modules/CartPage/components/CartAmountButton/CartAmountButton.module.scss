@@ -17,3 +17,18 @@
     background-color: inherit;
   }
 }
+
+.lightTheme {
+  background-color: $white-theme-white;
+  border: 1px solid $white-theme-icons;
+}
+
+.lightTheme:hover {
+  background-color: $white-theme-hoverAndBg;
+  border: 1px solid $white-theme-icons;
+}
+
+.lightTheme:disabled {
+  border: 1px solid $white-theme-elements;
+  background-color: $white-theme-white;
+}

@@ -161,3 +161,41 @@
     width: 200px;
   }
 }
+
+.lightTheme {
+  .back_text{
+    color: $white-theme-primary;
+  }
+
+  .title {
+    color: $white-theme-primary;
+  }
+
+  .title_about {
+    color: $white-theme-primary;
+  }
+  
+  .title_about::after {
+    background-color: $white-theme-icons;
+  }
+
+  h3::after {
+    background-color: $white-theme-icons;
+  }
+  
+  .text_title {
+    color: $white-theme-primary;
+  }
+  
+  .text_about {
+    color: $white-theme-secondary;
+  }
+
+  .section_tech {
+    color: $white-theme-primary;
+  }
+
+  .top_title {
+    color: $white-theme-primary;
+  }
+}

@@ -61,6 +61,10 @@ export const CartAndFavouritsContextProvider: React.FC<Props> = ({ children }) =
     }
   }
 
+  const deleteOnCheckout = () => {
+    setCart([]);
+  }
+
   const values = useMemo(
     () => ({
       cart,
@@ -69,6 +73,7 @@ export const CartAndFavouritsContextProvider: React.FC<Props> = ({ children }) =
       onDeleteFromCart: handleDeleteFromCart,
       onUpdateFavorites: updateFavorites,
       onUpdateCart: updateCart,
+      onCheckout: deleteOnCheckout,
     }),
     [cart, favourites],
   );

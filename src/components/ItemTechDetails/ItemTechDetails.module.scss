@@ -55,3 +55,13 @@
     font-weight: 700;
   }
 }
+
+.lightTheme {
+  .info-key {
+    color: $white-theme-secondary;
+  }
+
+  .info-value {
+    color: $white-theme-primary;
+  }
+}

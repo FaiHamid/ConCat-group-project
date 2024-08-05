@@ -19,3 +19,11 @@
 .visibility-false {
   display: none;
 }
+
+.lightTheme {
+  .center {
+    background: linear-gradient(to bottom right,
+      rgba(255, 255, 255, 0.2),
+      rgba(252, 252, 255, 0.5));
+  }
+}

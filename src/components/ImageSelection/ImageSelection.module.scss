@@ -62,3 +62,13 @@
   object-fit: cover;
   position: absolute;
 }
+
+.lightTheme {
+  .small_img {
+    border: 0.2px solid $white-theme-elements;
+  }
+
+  .isActiveImg {
+    border: 0.2px solid $white-theme-primary;
+  }
+}

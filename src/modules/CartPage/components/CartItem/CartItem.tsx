@@ -6,6 +6,8 @@ import { IconList } from "../../../../components/Icon/utils/IconList";
 import { CartAmountButton } from "../CartAmountButton";
 import { CartProduct } from "../../../../types";
 import { useCartAndFavouritsContextContext } from "../../../../components/controllers/CartAndFavourits/useCartAndFavouritsContext";
+import { useTheme } from "../../../../contexts/ThemeContext";
+import classNames from "classnames";
 
 type Props = {
   product: CartProduct;
@@ -18,9 +20,13 @@ const MAX_PRODUCTS = 10;
 export const CartItem: React.FC<Props> = ({ product, increaseAmount, decreaseAmount }) => {
   const { image, name, price, amount } = product;
   const { onDeleteFromCart } = useCartAndFavouritsContextContext();
+  const { theme } = useTheme();
 
   return (
-    <article className={classes.CartItem}>
+    <article className={classNames(classes.CartItem, {
+      [classes.lightTheme]: theme === 'light',
+      [classes.darkTheme]: theme === 'dark',
+    })}>
       <div className={classes.CartItem__container}>
         <button
           className={classes.CartItem__remove}
@@ -32,7 +38,7 @@ export const CartItem: React.FC<Props> = ({ product, increaseAmount, decreaseAmo
 
         <Link
           className={classes.CartItem__link}
-          to={`/${product.category}/${product.id}`}
+          to={`/${product.category}/${product.itemId}`}
           title="More details"
         >
           <div className={classes['CartItem__img-wrapper']}>

@@ -35,7 +35,7 @@
 
 li {
   background-color: transparent;
-  color: $white-color !important;
+  color: $white-color;
   text-decoration: none;
 }
 
@@ -60,4 +60,43 @@ li {
 .pagination-arrowRight {
   mask: url(/img/icons/Vector-right.svg) no-repeat 50% 50%;
   background-color: $white-color;
+}
+
+.lightTheme {
+  .page {
+    background-color: $white-theme-white;
+    border: 1px solid $white-theme-icons;
+    transition: background-color 0.3s ease;
+    color: $white-theme-primary;
+  }
+
+  .page:hover {
+    background-color: $white-theme-primary;
+  }
+
+  .active {
+    background-color: $white-theme-primary;
+    color: $white-color;
+  }
+
+  li {
+    background-color: transparent;
+    color: $white-theme-primary;
+    text-decoration: none;
+  }
+
+  .pagination-arrowLeft {
+    mask: url(/img/icons/Vector-left.svg) no-repeat 50% 50%;
+    background-color: $white-theme-primary;
+  }
+  
+  .pagination-arrowRight {
+    mask: url(/img/icons/Vector-right.svg) no-repeat 50% 50%;
+    background-color: $white-theme-primary;
+  }
+
+  .pagination-arrowLeft:hover,
+  .pagination-arrowRight:hover { 
+    background-color: $white-theme-white;
+  }
 }

@@ -107,3 +107,29 @@
     @extend %h2;
   }
 }
+
+.lightTheme {
+
+  background-color: $white-theme-white;
+  border: 1px solid $white-theme-elements;
+
+  .CartItem__title {
+    color: $white-theme-primary
+  }
+
+  .CartItem__title:hover {
+    color: $white-theme-secondary;
+  }
+
+  .CartItem__quantity {
+    color: $white-theme-primary;
+  }
+
+  .CartItem__price {
+    color: $white-theme-primary;
+  }
+}
+
+.lightTheme:hover {
+  border-color: $white-theme-hoverAndBg;
+}

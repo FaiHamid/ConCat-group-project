@@ -14,7 +14,7 @@
 
   &__title{
     @extend %h1;
-
+    margin-bottom: 24px;
     @include content-padding-inline;
 
     @include on-tablet {
@@ -27,7 +27,6 @@
   }
   
 }
-
 
 .section_top_title{
   margin-bottom: 24px;
@@ -182,4 +181,18 @@
 
 .loader{
   @include loader;
+}
+
+.lightTheme {
+  transition: color, 0.3s;
+  background-color: $white-theme-white;
+  color: $white-theme-primary;
+
+  .category__title {
+    color: $black-color;
+  }
+
+  .section_top_title{
+    color: $white-theme-primary;
+  }
 }

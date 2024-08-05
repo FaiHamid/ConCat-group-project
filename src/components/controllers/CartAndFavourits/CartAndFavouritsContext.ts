@@ -8,6 +8,7 @@ export interface CartAndFavouritsContextType {
   onDeleteFromCart: (product: Product) => void;
   onUpdateFavorites: (product: Product) => void;
   onUpdateCart: (product: CartProduct, action: CartActions) => void;
+  onCheckout: () => void;
 }
 
 export const CartAndFavouritsContext = React.createContext<CartAndFavouritsContextType>({
@@ -17,4 +18,5 @@ export const CartAndFavouritsContext = React.createContext<CartAndFavouritsConte
   onUpdateFavorites: () => {},
   onDeleteFromCart: () => {},
   onUpdateCart: () => {},
+  onCheckout: () => {},
 });

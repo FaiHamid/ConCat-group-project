@@ -4,6 +4,7 @@
   display: flex;
   color: $white-color;
   gap: 64px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 
   &__item {
     display: flex;
@@ -41,5 +42,26 @@
     width: 100%;
 
     background-color: $white-color;
+  }
+}
+
+.lightTheme {
+  color: $white-theme-primary;
+
+  .Nav__item {
+    color: $white-theme-secondary;
+  }
+
+  .Nav__item:hover {
+    color: $white-theme-primary;
+    transition-duration: 0.3s;
+  }
+  
+  .active {
+    color: $white-theme-primary;
+  }
+
+  .active::after {
+    background-color: $white-theme-primary;
   }
 }

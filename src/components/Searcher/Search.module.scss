@@ -49,3 +49,19 @@
     z-index: 1;
   }
 }
+
+.lightTheme {
+  .searchForm__input {
+    color: $white-theme-primary;
+    background-color: $white-theme-white;
+    border: 1px solid $white-theme-primary;
+  }
+
+  .searchForm__input::placeholder {
+    color: $white-theme-primary;
+  }
+
+  .searchForm__input:focus {
+    border: 1px solid $white-theme-secondary;
+  }
+}

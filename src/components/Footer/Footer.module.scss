@@ -107,3 +107,22 @@
     @extend %text-small;
     text-decoration: none;
   }
+
+  .lightTheme {
+    transition: color, 0.3s;
+    border-top: 1px $white-theme-elements  solid;
+
+    .link {
+      color: $white-theme-secondary;
+    }
+
+    .arrow {
+      background-color: $white-theme-white;
+      border: 1px solid $white-theme-secondary;
+  
+      &::before {
+        border-right: 2px solid $white-theme-secondary;
+        border-top: 2px solid $white-theme-secondary;
+      }
+    }
+  }

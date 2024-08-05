@@ -53,7 +53,6 @@
   border: 1px solid $icons-color;
   margin-right: 8px;
   margin-top: 8px;
-
 }
 
 .notActive,
@@ -148,5 +147,57 @@
     text-align: right;
     text-wrap: wrap;
     font-weight: 700;
+  }
+}
+
+.lightTheme {
+  .section_params::after {
+    background-color: $white-theme-green;
+    color: $white-theme-green;
+  }
+  
+  .colors_text {
+    color: $white-theme-secondary;
+  }
+  
+  .capacity_text {
+    color: $white-theme-secondary;
+  }
+  
+  .isActiveCol {
+    outline: 2px solid $white-theme-primary !important;
+  }
+
+  .radio_color {
+    border: 3px solid $white-theme-white;
+    outline: 1px solid $white-theme-icons;
+  }
+  
+  .capacity_button {
+    color: $white-theme-primary;
+    background-color: $white-theme-white;
+    border: 1px solid $white-theme-secondary;
+  }
+
+  .isActiveButton {
+    color: $white-theme-white;
+    background-color: $white-theme-primary;
+    border: 1px solid $white-theme-primary;
+  }
+
+  .product__price {
+    color: $white-theme-primary;
+  }
+
+  .product__price-discount {
+    color: $white-theme-secondary;
+  }
+
+  .info-key {
+    color: $white-theme-secondary;
+  }
+
+  .info-value {
+    color: $white-theme-primary;
   }
 }

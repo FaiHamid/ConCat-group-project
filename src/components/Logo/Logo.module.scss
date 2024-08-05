@@ -5,7 +5,14 @@
   height: 26px;
   cursor: pointer;
 
-  background-image: url('/img/icons/NiceGadgets.svg') ;
+  &.lightTheme {
+    background-image: url('/img/icons/NiceGadgets-white-theme.svg') ;
+  }
+
+  &.darkTheme {
+    background-image: url('/img/icons/NiceGadgets.svg') ;
+  }
+  
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

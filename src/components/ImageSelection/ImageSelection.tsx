@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import cn from 'classnames';
 import styles from './ImageSelection.module.scss';
 import { Item } from '../../types';
+import { useTheme } from '../../contexts/ThemeContext';
+import classNames from 'classnames';
 
 interface Props {
   item: Item;
@@ -15,9 +17,15 @@ export const ImageSelection: React.FC<Props> = ({
   activeImage,
   onChangeActiveImage,
 }) => {
+  const { theme } = useTheme();
+
   return (
     <>
-      <div className={styles.small_images}>
+      <div className={classNames(styles.small_images, {
+      [styles.lightTheme]: theme === 'light',
+      [styles.darkTheme]: theme === 'dark',
+      })}
+    >
         {item?.images.map((image, index) => (
             <img
               key={uuidv4()}

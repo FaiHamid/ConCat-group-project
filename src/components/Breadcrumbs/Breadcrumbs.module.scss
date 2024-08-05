@@ -39,3 +39,21 @@
 
   @include hover (background-image, url('/img/icons/Home-hover.svg'));
 }
+
+.lightTheme {
+  .BreadcrumbsHome {
+    background-image: url('/img/icons/Home-WhiteTheme.svg');
+  }
+
+  .Breadcrumbs__link {
+    color: $white-theme-primary;
+
+    @include hover(color, $white-theme-green);
+  }
+
+  .Breadcrumbs__link:last-child {
+    color: $white-theme-secondary;
+
+    @include hover(color, $white-theme-green);
+  }
+}
