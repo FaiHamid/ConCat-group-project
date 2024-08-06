@@ -11,7 +11,7 @@
 
   &__left {
     display: flex;
-    gap: 16px;
+    gap: 14px;
 
     @include on-desktop {
       gap: 24px;
@@ -52,20 +52,60 @@
   }
 
   &__favorites::before,
-  &__cart::before,
-  &__settings::before {
+  &__cart::before{
     content: '';
     width: 1px;
     height: 100%;
     background-color: $surface-2-color;
   }
+  // &__favorites::before,
+  // &__cart::before,
+  // &__settings::before{
+  //   content: '';
+  //   width: 1px;
+  //   height: 100%;
+  //   background-color: $surface-2-color;
+  // }
 }
 
 .Header__settings {
-  width: 48px;
+  width: 64px;
+  display: none;
+
+  @include on-tablet {
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    margin-inline: 7px;
+  }
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: $surface-2-color;
+  }
+
+  @include on-tablet {
+    &::before {
+      content: '';
+      margin-right: 19px;
+    }
+  }
 
   @include on-desktop {
-    width: 64px;
+    &{
+      margin-inline: 0;
+    }
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    margin-right: 0;
+    background-color: $surface-2-color;
+  }
+
   }
 
   & > button {
@@ -77,14 +117,15 @@
 // Header burger-menu //
 
 .Header__menu {
-  width: 48px;
+  width: 96px;
+  display: flex;
 
   & > button {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 100%;
+    width: 48px;
     height: 100%;
     cursor: pointer;
     border-left: 0.5px solid $surface-2-color;
@@ -99,6 +140,18 @@
     width: 1px;
     height: 100%;
     background-color: $surface-2-color;
+  }
+}
+
+.Header__settings_menu{
+  z-index: 1001;
+  width: 48px;
+  margin-top: 13px;
+  padding-bottom: 15px;
+
+  & > button {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -120,6 +173,7 @@
 
   .Header__menu > button {
     border-left: 0.5px solid $white-theme-elements;
+    
   }
 }
 

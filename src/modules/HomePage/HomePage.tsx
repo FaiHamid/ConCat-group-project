@@ -59,7 +59,7 @@ export const HomePage: React.FC = () => {
             visible={true}
             height="200"
             width="200"
-            color="#ffffff"
+            color={`${theme === 'dark' ? `#F1F2F9` : '#27AE60'}`}
             ariaLabel="three-circles-loading"
             wrapperStyle={{}}
             wrapperClass={classes.loader}
@@ -119,7 +119,7 @@ export const HomePage: React.FC = () => {
             visible={true}
             height="200"
             width="200"
-            color="#ffffff"
+            color={`${theme === 'dark' ? `#F1F2F9` : '#27AE60'}`}
             ariaLabel="three-circles-loading"
             wrapperStyle={{}}
             wrapperClass={classes.loader}

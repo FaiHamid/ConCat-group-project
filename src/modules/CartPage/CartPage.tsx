@@ -58,7 +58,7 @@ export const CartPage: React.FC = () => {
       [classes.lightTheme]: theme === 'light',
       [classes.darkTheme]: theme === 'dark',
     })}>
-         <h2>{t('nav.cart')}</h2>
+        <h2>{t('nav.cart')}</h2>
           
           <div className={classes.CartPage__content}>
             <div className={classes.CartPage__list}>

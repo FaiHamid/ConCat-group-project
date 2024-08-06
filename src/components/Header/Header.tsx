@@ -52,24 +52,31 @@ export const Header: React.FC = () => {
         </div>
 
         <div className={classes.Header__menu}>
+
+          <div className={classes.Header__settings_menu}>
+            <Settings isOpen={isSettingsOpen} onToggle={toggleSettings} />
+          </div>
+
           <button
             type="button"
             onClick={handleToggleMenu}
             aria-label="Toggle menu"
           >
             <img
-              src={isMenuOpen ? '/img/icons/Close.svg' : '/img/icons/Menu.svg'}
+              src={isMenuOpen ? ( theme === 'dark' ? '/img/icons/Close.svg' : '/img/icons/close_dark.svg') 
+                : (theme === 'dark' ? '/img/icons/Menu.svg' : '/img/icons/burger_dark.svg')}
               alt={isMenuOpen ? 'close-menu' : 'burger-menu'}
             />
           </button>
+          
         </div>
       </div>
+
       <Menu
         isOpen={isMenuOpen}
         onClickClose={handleToggleMenu}
-        favouritesCount={0}
-        cartCount={0}
       />
+      
     </header>
   );
 };

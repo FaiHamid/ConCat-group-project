@@ -2,57 +2,64 @@ import classNames from 'classnames';
 import styles from './Menu.module.scss';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import { useTheme } from '../../contexts/ThemeContext';
+import { Cart } from '../../components/Cart';
+import { Favorites } from '../../components/Favorites';
 
 interface MenuProps {
-  favouritesCount: number;
-  cartCount: number;
   onClickClose: () => void;
   isOpen: boolean;
 }
 
-export const Menu: React.FC<MenuProps> = ({ favouritesCount, cartCount, isOpen, onClickClose }) => {
+export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
+
+  const { theme } = useTheme();
+
   return (
-    <aside className={classNames(styles.menu, { [styles.isOpen]: isOpen })}>
+    <aside className={classNames(styles.menu, { [styles.isOpen]: isOpen,
+      [styles.lightTheme]: theme === 'light',
+      [styles.darkTheme]: theme === 'dark',
+    })}>
       <div className={styles.container}>
         <div className={styles.menu__center}>
           <nav className={styles.menu__nav}>
             <ul className={styles.menu__list}>
               <li className={styles.menu__item}>
-                <a
+                <Link
                   className={styles.menu__link}
-                  href="#shop"
+                  to="/"
                   onClick={onClickClose}
                 >
                   Home
-                </a>
+                </Link>
               </li>
 
               <li className={styles.menu__item}>
-                <a
+                <Link
                   className={styles.menu__link}
-                  href="#contacts"
+                  to="/phones"
                   onClick={onClickClose}
                 >
                   Phones
-                </a>
+                </Link>
               </li>
               <li className={styles.menu__item}>
-                <a
+                <Link
                   className={styles.menu__link}
-                  href="#about"
+                  to="/tablets"
                   onClick={onClickClose}
                 >
                   Tablets
-                </a>
+                </Link>
               </li>
               <li className={styles.menu__item}>
-                <a
+                <Link
                   className={styles.menu__link}
-                  href="#about"
+                  to="/accessories"
                   onClick={onClickClose}
                 >
                   Accessories
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -60,27 +67,13 @@ export const Menu: React.FC<MenuProps> = ({ favouritesCount, cartCount, isOpen, 
       </div>
 
       <div className={styles.menu__bottom}>
+
         <div className={styles.menu__icons}>
-          <Link
-            className={classNames(styles.icon, styles['icon-favourite'])}
-            to="/favourites"
-            onClick={onClickClose}
-          >
-            {favouritesCount > 0 && (
-              <span className={styles.icon__num}>{favouritesCount}</span>
-            )}
-          </Link>
+          <Favorites />
         </div>
         <div className={styles.menu__icons}>
-          <Link
-            className={classNames(styles.icon, styles['icon-cart'])}
-            to="/cart"
-            onClick={onClickClose}
-          >
-            {cartCount > 0 && (
-              <span className={styles.icon__num}>{cartCount}</span>
-            )}
-          </Link>
+
+          <Cart />
         </div>
       </div>
     </aside>
