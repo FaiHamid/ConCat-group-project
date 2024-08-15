@@ -53,7 +53,7 @@
   .arrow {
     width: 32px;
     height: 32px;
-    background-color: #555;
+    background-color: $elements-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,6 +68,10 @@
       border-right: 2px solid white;
       border-top: 2px solid white;
       transform: rotate(-45deg);
+    }
+
+    &:hover::before {
+      border-color: $accent-color;
     }
   }
 
@@ -114,6 +118,14 @@
 
     .link {
       color: $white-theme-secondary;
+
+      &:hover {
+        color: $white-theme-green;
+      }
+    }
+
+    .footer__textInfo:hover {
+      color: $white-theme-green;
     }
 
     .arrow {
@@ -123,6 +135,10 @@
       &::before {
         border-right: 2px solid $white-theme-secondary;
         border-top: 2px solid $white-theme-secondary;
+      }
+
+      &:hover::before {
+        border-color: $white-theme-green;
       }
     }
   }
