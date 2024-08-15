@@ -34,9 +34,9 @@ export const Footer: React.FC = () => {
             <Link className={styles.link} to="/contacts">
               {t('footer.contacts')}
             </Link>
-            <a className={styles.link} href="#">
+            <Link className={styles.link} to="/rights">
               {t('footer.rights')}
-            </a>
+            </Link>
           </div>
           <div className={styles.footer__backToTop}>
             <a onClick={scrollToTop} className={styles.footer__textInfo}>

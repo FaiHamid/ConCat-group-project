@@ -27,8 +27,6 @@ export const Settings: React.FC<SettingsProps> = ({ onToggle, isOpen }) => {
   const { theme } = useTheme();
   const [isRotating, setIsRotating] = useState(false);
 
-  const suffixForImg = theme === 'dark' ? '' : '-light';
-
   const handleClick = () => {
     setIsRotating(true);
     setTimeout(() => {
@@ -37,6 +35,8 @@ export const Settings: React.FC<SettingsProps> = ({ onToggle, isOpen }) => {
 
     onToggle();
   };
+
+  const suffixForImg = theme === 'dark' ? '' : '-light';
 
   return (
     <div className={classNames(styles.settings, {

@@ -38,10 +38,10 @@ export const Header: React.FC = () => {
       </div>
 
       <div className={classes.Header__right}>
-
         <div className={classes.Header__settings}>
           <Settings isOpen={isSettingsOpen} onToggle={toggleSettings} />
         </div>
+
 
         <div className={classes.Header__favorites}>
           <Favorites />

@@ -9,6 +9,7 @@ import { Catalog } from './modules/Catalog';
 import { CartAndFavouritsContextProvider } from './components/controllers/CartAndFavourits/CartAndFavouritsContextProvider';
 import { FavouritePage } from './modules/FavoritesPage/FavoritesPage';
 import { Contacts } from './components/Contacts/Contacts';
+import { Rights } from './components/Rights';
 import { ThemeProvider } from './contexts/ThemeContext';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="cart" element={<CartPage />} />
             <Route path="*" element={<NotFoundPage />} />
             <Route path="contacts" element={<Contacts />} />
+            <Route path="rights" element={<Rights />} />
           </Route>
         </Routes>
       </ThemeProvider>
