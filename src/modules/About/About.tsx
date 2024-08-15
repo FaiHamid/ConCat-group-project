@@ -83,18 +83,28 @@ export const About: React.FC = () => {
   }
 
   const { theme } = useTheme();
+  const version = item?.namespaceId || 0;
 
   return (
-    <div className={classNames(styles.about, {
-      [styles.lightTheme]: theme === 'light',
-      [styles.darkTheme]: theme === 'dark',
-    })}>
+    <div
+      className={classNames(styles.about, {
+        [styles.lightTheme]: theme === 'light',
+        [styles.darkTheme]: theme === 'dark',
+      })}
+    >
       <div className={styles.breadCrumbs}>
         <Breadcrumbs />
       </div>
       <Link to="/" className={styles.back_link}>
-        <img src="/img/icons/Chevron(ArrowRight).svg" alt="ArrowBack" />
-        <p className={styles.back_text}>Back</p>
+        <img
+          src={`${theme === 'dark' 
+            ? '/img/icons/Chevron(ArrowRight).svg'
+            : '/img/icons/Vector-left.svg'
+          }`}
+          alt="ArrowBack"
+          className={styles.img_back}
+        />
+        <p className={styles.back_text}>{t('aboutPage.back')}</p>
       </Link>
 
       {isLoading ? (
@@ -126,13 +136,13 @@ export const About: React.FC = () => {
               </section>
 
               <section className={styles.section_about}>
-                <h3 className={styles.title_about}>About</h3>
+                <h3 className={styles.title_about}>{t('aboutPage.about')}</h3>
 
                 <div className={styles.text_container}>
-                  {item?.description.map(({ title, text }) => (
+                  {item?.description.map((_desc, index) => (
                     <React.Fragment key={uuidv4()}>
-                      <h4 className={styles.text_title}>{title}</h4>
-                      <p className={styles.text_about}>{text}</p>
+                      <h4 className={styles.text_title}>{t(`${version + index.toString()}.title`)}</h4>
+                      <p className={styles.text_about}>{t(`${version + index.toString()}.text`)}</p>
                     </React.Fragment>
                   ))}
                 </div>

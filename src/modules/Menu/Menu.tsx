@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Cart } from '../../components/Cart';
-import { Favorites } from '../../components/Favorites';
+import { Favourites } from '../../components/Favourites';
 
 interface MenuProps {
   onClickClose: () => void;
@@ -69,7 +69,7 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
       <div className={styles.menu__bottom}>
 
         <div className={styles.menu__icons}>
-          <Favorites />
+          <Favourites />
         </div>
         <div className={styles.menu__icons}>
 

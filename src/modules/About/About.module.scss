@@ -163,8 +163,12 @@
 }
 
 .lightTheme {
-  .back_text{
+  .back_text {
     color: $white-theme-primary;
+  }
+
+  .img_back {
+    padding: 3px 5px;
   }
 
   .title {

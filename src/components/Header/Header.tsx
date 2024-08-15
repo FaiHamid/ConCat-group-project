@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classes from './Header.module.scss';
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
-import { Favorites } from '../Favorites';
+import { Favourites } from '../Favourites';
 import { Cart } from '../Cart';
 import { Menu } from '../../modules/Menu';
 import { Settings } from '../Settings';
@@ -43,8 +43,8 @@ export const Header: React.FC = () => {
         </div>
 
 
-        <div className={classes.Header__favorites}>
-          <Favorites />
+        <div className={classes.Header__favourites}>
+          <Favourites />
         </div>
 
         <div className={classes.Header__cart}>

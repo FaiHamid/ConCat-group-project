@@ -7,7 +7,7 @@ import { About } from './modules/About';
 import { NotFoundPage } from './pages/notFoundPage/NotFoundPage';
 import { Catalog } from './modules/Catalog';
 import { CartAndFavouritsContextProvider } from './components/controllers/CartAndFavourits/CartAndFavouritsContextProvider';
-import { FavouritePage } from './modules/FavoritesPage/FavoritesPage';
+import { FavouritePage } from './modules/FavouritesPage/FavouritesPage';
 import { Contacts } from './components/Contacts/Contacts';
 import { Rights } from './components/Rights';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -30,7 +30,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="accessories/:itemId" element={<About />} />
             <Route path="accessories" element={<Catalog />} />
 
-            <Route path="favorites" element={<FavouritePage />} />
+            <Route path="favourites" element={<FavouritePage />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="*" element={<NotFoundPage />} />
             <Route path="contacts" element={<Contacts />} />
