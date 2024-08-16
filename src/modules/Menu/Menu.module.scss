@@ -74,7 +74,7 @@
     align-items: center;
     position: relative;
 
-   &:nth-child(even) {
+  &:nth-child(even) {
     border-left: 1px solid $elements-color;
     }
 
@@ -158,11 +158,4 @@
 
 .lightTheme {
   background-color: $white-theme-white;
-  // color: $black-color;
-
-  // .menu_link{
-  //   color: $black-color;
-  // }
-
-
 }

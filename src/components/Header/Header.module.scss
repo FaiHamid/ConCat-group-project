@@ -30,7 +30,7 @@
     display: flex;
   }
 
-  &__favorites,
+  &__favourites,
   &__cart,
   &__nav,
   &__settings {
@@ -41,7 +41,7 @@
     }
   }
 
-  &__favorites,
+  &__favourites,
   &__cart,
   &__settings {
     width: 48px;
@@ -51,21 +51,13 @@
     }
   }
 
-  &__favorites::before,
+  &__favourites::before,
   &__cart::before{
     content: '';
     width: 1px;
     height: 100%;
     background-color: $surface-2-color;
   }
-  // &__favorites::before,
-  // &__cart::before,
-  // &__settings::before{
-  //   content: '';
-  //   width: 1px;
-  //   height: 100%;
-  //   background-color: $surface-2-color;
-  // }
 }
 
 .Header__settings {
@@ -73,10 +65,9 @@
   display: none;
 
   @include on-tablet {
-    width: 64px;
+    width: 48px;
     display: flex;
     justify-content: center;
-    margin-inline: 7px;
   }
 
   &::before {
@@ -89,11 +80,12 @@
   @include on-tablet {
     &::before {
       content: '';
-      margin-right: 19px;
     }
   }
 
   @include on-desktop {
+    width: 64px;
+
     &{
       margin-inline: 0;
     }
@@ -128,7 +120,7 @@
     width: 48px;
     height: 100%;
     cursor: pointer;
-    border-left: 0.5px solid $surface-2-color;
+    border-left: 0.5px solid $white-theme-elements;
   }
 
   @include on-tablet {
@@ -139,15 +131,13 @@
     content: '';
     width: 1px;
     height: 100%;
-    background-color: $surface-2-color;
+    background-color: $white-theme-elements;
   }
 }
 
 .Header__settings_menu{
   z-index: 1001;
   width: 48px;
-  margin-top: 13px;
-  padding-bottom: 15px;
 
   & > button {
     width: 100%;
@@ -164,7 +154,7 @@
   border: 1px solid $white-theme-elements;
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 
-  .Header__favorites::before, .Header__cart::before, .Header__settings::before  {
+  .Header__favourites::before, .Header__cart::before, .Header__settings::before  {
     content: '';
     width: 1px;
     height: 100%;

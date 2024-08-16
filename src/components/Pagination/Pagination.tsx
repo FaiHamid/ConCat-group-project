@@ -34,9 +34,11 @@ export const Pagination: React.FC<Props> = ({
       nextLabel={<span className={classNames(styles['pagination-arrowRight'], styles.page)}></span>}
       breakLabel={'...'}
       breakClassName={styles.break}
+      breakLinkClassName={styles.breakLink}
       pageCount={numberOfPages}
       marginPagesDisplayed={1}
       pageRangeDisplayed={2}
+      pageLinkClassName={styles.pageLink}
       onPageChange={(data) => onPageChange(data.selected + 1)}
       containerClassName={paginationClassName}
       activeClassName={classNames(styles.active, {

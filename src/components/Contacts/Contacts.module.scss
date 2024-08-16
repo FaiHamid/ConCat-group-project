@@ -141,7 +141,6 @@ h2{
 }
 
 .personalQuote {
-  // margin-top: 25px;
   font-size: 16px;
   color: $color-icons;
   height: 45px;
@@ -169,7 +168,7 @@ a:hover {
 
 @media (min-width: 501px) {
   .personalInfo {
-      transform: translateY(0); /* Текст завжди видимий */
+      transform: translateY(0); 
   }
 }
 

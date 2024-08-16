@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import styles from './Settings.module.scss';
 
-import { CursorSettings } from "../CursorSettings";
+import { CursorSettings } from '../CursorSettings';
 import { useTranslation } from 'react-i18next';
 
-import { ThemeToggleButton } from "../../contexts/ThemeToggleButton";
-import { useTheme } from "../../contexts/ThemeContext";
-import classNames from "classnames";
-
+import { ThemeToggleButton } from '../../contexts/ThemeToggleButton';
+import { useTheme } from '../../contexts/ThemeContext';
+import classNames from 'classnames';
 
 interface SettingsProps {
   isOpen: boolean;
-  onToggle: () => void;
+  onToggle: (atr?: boolean) => void;
 }
 
-export const Settings: React.FC<SettingsProps> = ({ onToggle, isOpen }) => {
-
+export const Settings: React.FC<SettingsProps> = ({
+  onToggle,
+  isOpen
+}) => {
   const { i18n } = useTranslation();
 
   const changeLanguage = () => {
@@ -27,11 +28,16 @@ export const Settings: React.FC<SettingsProps> = ({ onToggle, isOpen }) => {
   const { theme } = useTheme();
   const [isRotating, setIsRotating] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (atr?: boolean) => {
     setIsRotating(true);
     setTimeout(() => {
       setIsRotating(false);
     }, 500);
+
+    if (atr) {
+      onToggle(atr);
+      return;
+    }
 
     onToggle();
   };
@@ -39,20 +45,29 @@ export const Settings: React.FC<SettingsProps> = ({ onToggle, isOpen }) => {
   const suffixForImg = theme === 'dark' ? '' : '-light';
 
   return (
-    <div className={classNames(styles.settings, {
+    <div
+      className={classNames(styles.settings, {
         [styles.lightTheme]: theme === 'light',
         [styles.darkTheme]: theme === 'dark',
       })}
     >
       <button
         type="button"
-        onClick={handleClick}
+        onClick={() => handleClick()}
         aria-label="Toggle settings"
-        className={classNames(styles.iconButton, { [styles.rotate]: isRotating })}
+        className={classNames(styles.iconButton, {
+          [styles.rotate]: isRotating,
+        })}
       >
         <img src={`/img/icons/settings${suffixForImg}.svg`} alt="Settings" />
       </button>
-      <div className={classNames(styles.menu, { [styles.open]: isOpen })}>
+
+      <div
+        onBlur={() => handleClick(true)}
+        className={classNames(styles.menu, {
+          [styles.open]: isOpen
+        })}
+      >
         <div className={styles.menuItem}>
           <button
             type="button"
@@ -66,7 +81,6 @@ export const Settings: React.FC<SettingsProps> = ({ onToggle, isOpen }) => {
           <ThemeToggleButton />
         </div>
         <div className={styles.menuItem}>
-
           <CursorSettings />
         </div>
       </div>

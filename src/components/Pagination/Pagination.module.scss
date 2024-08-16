@@ -28,6 +28,10 @@
   }
 }
 
+.pageLink {
+  padding: 8px 11px;
+}
+
 .active {
   background-color: $accent-color;
   color: $white-color;
@@ -67,16 +71,32 @@ li {
     background-color: $white-theme-white;
     border: 1px solid $white-theme-icons;
     transition: background-color 0.3s ease;
-    color: $white-theme-primary;
+    color: $white-theme-primary !important;
   }
 
   .page:hover {
     background-color: $white-theme-primary;
   }
 
+  .page:hover .pageLink{
+    color: $white-theme-green;
+  }
+
   .active {
     background-color: $white-theme-primary;
     color: $white-color;
+  }
+
+  .page.active .pageLink{
+    color: $white-color;
+  }
+
+  .breakLink {
+    color: $black-color;
+  }
+
+  .pageLink {
+    color: $black-color;
   }
 
   li {

@@ -1,6 +1,6 @@
 export enum IconList {
     cart = 'Cart',
-    favorites = 'Favourites',
+    favourites = 'Favourites',
     menu = 'Menu',
     close = 'Close',
     minus = 'Minus',

@@ -15,7 +15,7 @@ export const CartAndFavouritsContextProvider: React.FC<Props> = ({ children }) =
     [],
   );
 
-  const updateFavorites = (product: Product) => {
+  const updateFavourites = (product: Product) => {
     const existingItem = favourites.find(favouritesItem => favouritesItem.id === product.id);
     if (existingItem) {
       setFavourites(favourites.filter(favouritesItem =>
@@ -71,7 +71,7 @@ export const CartAndFavouritsContextProvider: React.FC<Props> = ({ children }) =
       favourites,
       onAddToCart: handleAddToCart,
       onDeleteFromCart: handleDeleteFromCart,
-      onUpdateFavorites: updateFavorites,
+      onUpdateFavourites: updateFavourites,
       onUpdateCart: updateCart,
       onCheckout: deleteOnCheckout,
     }),

@@ -9,9 +9,10 @@ import { useTheme } from '../../contexts/ThemeContext';
 
 type Props = {
   product: Product;
+  search?: string;
 };
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
+export const ProductCard: React.FC<Props> = ({ product, search }) => {
   const { t } = useTranslation();
 
   const {
@@ -28,6 +29,11 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   const { theme } = useTheme();
 
   const discount = product.id % 3 === 0;
+  let longName = false;
+
+  if (name.length > 50) {
+    longName = true;
+  }
 
   const priceCell = () => (
     <div>
@@ -58,11 +64,13 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         to={`../../${category}/${itemId}`}
         className={styles.product__image}
         style={{ backgroundImage: `url(/${image})` }}
+        state={{search}}
       />
 
       <Link
         to={`../../${category}/${itemId}`}
-        className={styles.product__title}
+        className={classNames(styles.product__title, {[styles.longName]: longName})}
+        state={{search}}
       >
         {name}
       </Link>

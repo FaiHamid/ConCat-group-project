@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import classes from './FavoritesPage.module.scss';
+import classes from './FavouritesPage.module.scss';
 import { ProductCard } from '../../components/ProductCard';
 import { useCartAndFavouritsContextContext } from '../../components/controllers/CartAndFavourits/useCartAndFavouritsContext';
 import { Breadcrumbs } from '../../components/Breadcrumbs';

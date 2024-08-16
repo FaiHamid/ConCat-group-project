@@ -5,13 +5,20 @@ import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import classes from './Breadcrumbs.module.scss';
 import { useTheme } from '../../contexts/ThemeContext';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 export const Breadcrumbs: React.FC = () => {
   const { theme } = useTheme();
-
+  const { t } = useTranslation();
   const BreadcrumbsHome = () => <div className={classes.BreadcrumbsHome} />;
 
-  const routes = [{ path: '/', breadcrumb: BreadcrumbsHome }];
+  const routes = [{ path: '/', breadcrumb: BreadcrumbsHome },
+    {path: '/phones', breadcrumb: t('breadcrumbs.phones')},
+    {path: '/tablets', breadcrumb: t('breadcrumbs.tablets')},
+    {path: '/accessories', breadcrumb: t('breadcrumbs.accessories')},
+    {path: '/favourites', breadcrumb: t('breadcrumbs.favourites')},
+    {path: '/cart', breadcrumb: t('breadcrumbs.cart')},
+  ];
 
   const breadcrumbs = useBreadcrumbs(routes);
 
