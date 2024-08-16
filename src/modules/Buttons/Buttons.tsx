@@ -23,7 +23,7 @@ export const Buttons: React.FC<Props> = ({
 }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const { cart, onAddToCart } = useCartAndFavouritsContextContext();
-  const { favourites, onUpdateFavorites } = useCartAndFavouritsContextContext();
+  const { favourites, onUpdateFavourites } = useCartAndFavouritsContextContext();
 
   const { theme } = useTheme();
 
@@ -39,7 +39,7 @@ export const Buttons: React.FC<Props> = ({
   );
 
   const onClickFavHandle = () => {
-    onUpdateFavorites(product);
+    onUpdateFavourites(product);
   };
 
   const onClickCart = () => {

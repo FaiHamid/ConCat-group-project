@@ -13,7 +13,7 @@ export const Icon: React.FC<Props> = ({ icon, counter = 0 }) => {
 
     const { theme } = useTheme(); 
 
-    const iconSrc = theme === 'light' ? `img/icons/${icon}-light.svg` : `img/icons/${icon}.svg`;
+    const iconSrc = theme === 'light' ? `/img/icons/${icon}-light.svg` : `/img/icons/${icon}.svg`;
 
     return (
         <div className={classNames(classes.Icon, {

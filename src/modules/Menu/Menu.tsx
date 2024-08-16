@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Cart } from '../../components/Cart';
-import { Favorites } from '../../components/Favorites';
+import { Favourites } from '../../components/Favourites';
+import { useTranslation } from 'react-i18next';
 
 interface MenuProps {
   onClickClose: () => void;
@@ -12,8 +13,8 @@ interface MenuProps {
 }
 
 export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
-
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <aside className={classNames(styles.menu, { [styles.isOpen]: isOpen,
@@ -30,7 +31,7 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
                   to="/"
                   onClick={onClickClose}
                 >
-                  Home
+                  {t('nav.home')}
                 </Link>
               </li>
 
@@ -40,7 +41,7 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
                   to="/phones"
                   onClick={onClickClose}
                 >
-                  Phones
+                  {t('nav.phones')}
                 </Link>
               </li>
               <li className={styles.menu__item}>
@@ -49,7 +50,7 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
                   to="/tablets"
                   onClick={onClickClose}
                 >
-                  Tablets
+                  {t('nav.tablets')}
                 </Link>
               </li>
               <li className={styles.menu__item}>
@@ -58,7 +59,7 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
                   to="/accessories"
                   onClick={onClickClose}
                 >
-                  Accessories
+                  {t('nav.accessories')}
                 </Link>
               </li>
             </ul>
@@ -69,7 +70,7 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
       <div className={styles.menu__bottom}>
 
         <div className={styles.menu__icons}>
-          <Favorites />
+          <Favourites />
         </div>
         <div className={styles.menu__icons}>
 

@@ -3,13 +3,14 @@
 .settings {
   position: relative;
   display: flex;
+  height: 100%;
+  width: 48px;
 
   justify-content: center;
   align-items: center;
 
   @include on-desktop {
     width: 64px;
-    height: 64px;
   }
 
   .iconButton {
@@ -37,7 +38,7 @@
     cursor: pointer;
     top: 100%;
     left: 50%;
-    width: 64px;
+    width: 49px;
     transform: translateX(-50%);
     background-color: $black-color;
     border: 1px solid $elements-color;
@@ -52,6 +53,10 @@
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    @include on-desktop {
+      width: 65px;
+    }
 
     &.open {
       max-height: 200px;
@@ -93,6 +98,7 @@
     }
   }
 }
+
 
 .lightTheme {
   .menu {
