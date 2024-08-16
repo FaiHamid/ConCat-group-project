@@ -8,8 +8,8 @@
     position: absolute;
     box-sizing: border-box;
     top: -43.5px;
-    width: 32px; // Adjust width as needed
-    height: 32px; // Adjust height as needed
+    width: 32px; 
+    height: 32px; 
     color: #fff;
     display: flex !important;
     align-items: center;
@@ -19,12 +19,12 @@
     border: 1px solid #333;
 
     &--next {
-      right: 10px; // Position the next arrow on the right
+      right: 10px; 
     }
 
     &--prev {
       left: initial;
-      right: 60px; // Position the prev arrow left of the next arrow
+      right: 60px; 
     }
 
     &:hover {
@@ -85,7 +85,7 @@
 
 .icon {
   filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(190deg) brightness(130%) contrast(95%);
-  width: 26px; // Adjust as needed
+  width: 26px; 
   height: 26px;
   padding: 5px;
 

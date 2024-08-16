@@ -29,6 +29,11 @@ export const ProductCard: React.FC<Props> = ({ product, search }) => {
   const { theme } = useTheme();
 
   const discount = product.id % 3 === 0;
+  let longName = false;
+
+  if (name.length > 50) {
+    longName = true;
+  }
 
   const priceCell = () => (
     <div>
@@ -64,7 +69,7 @@ export const ProductCard: React.FC<Props> = ({ product, search }) => {
 
       <Link
         to={`../../${category}/${itemId}`}
-        className={styles.product__title}
+        className={classNames(styles.product__title, {[styles.longName]: longName})}
         state={{search}}
       >
         {name}

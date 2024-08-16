@@ -18,9 +18,14 @@ export const Header: React.FC = () => {
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const toggleSettings = () => {
+  const toggleSettings = (atr?: boolean) => {
+    if (atr) {
+      setIsSettingsOpen(false);
+      return;
+    }
     setIsSettingsOpen(prevState => !prevState);
   };
+
 
   return (
     <header className={classNames(classes.Header, {
@@ -72,6 +77,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
+      
       <Menu
         isOpen={isMenuOpen}
         onClickClose={handleToggleMenu}

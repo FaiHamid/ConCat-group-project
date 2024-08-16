@@ -51,7 +51,7 @@ $desktop-height-img: 400px;
 
   .slick-active {
     button:before {
-      background-color: $white-color; /* Set the color of the active dot */
+      background-color: $white-color;  
     }
   }
 }
@@ -87,7 +87,7 @@ $desktop-height-img: 400px;
       justify-content: center;
       width: 100%;
       height: 100%;
-      font-size: 24px; /* Adjust as necessary */
+      font-size: 24px; 
     }
 
     &--next {
@@ -113,7 +113,7 @@ $desktop-height-img: 400px;
   
     .slick-active {
       button:before {
-        background-color: $white-theme-primary; /* Set the color of the active dot */
+        background-color: $white-theme-primary; 
       }
     }
   }

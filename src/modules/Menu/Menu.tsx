@@ -13,7 +13,6 @@ interface MenuProps {
 }
 
 export const Menu: React.FC<MenuProps> = ({ isOpen, onClickClose }) => {
-
   const { theme } = useTheme();
   const { t } = useTranslation();
 

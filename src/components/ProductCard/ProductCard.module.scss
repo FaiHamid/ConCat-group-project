@@ -12,12 +12,9 @@
   border: 1px solid $surface-1-color;
   position: relative;
 
-
-
   @include on-desktop {
     transition: transform 0.4s ease-out;
     height: 506px ;
-
   }
 
   
@@ -47,6 +44,7 @@
     }
     
   }
+
 
   &::after {
     display: block;
@@ -85,14 +83,16 @@
     font-weight: 600;
     line-height: 21px;
     text-align: left;
+    height: 58px;
+    display: block;
+    overflow: hidden;
+
 
     margin: 0;
-    padding-top: 16px;
+    padding-top: 10px;
     text-decoration: none;
     color: inherit;
     transition-duration: 0.3s;
-
-
 
     &:hover {
       color: $accent-color;
@@ -130,7 +130,7 @@
   }
 
   &__line {
-    margin-block: 8px;
+    margin-block: 4px;
     display: block;
     background-color: $elements-color;
     height: 1px;
