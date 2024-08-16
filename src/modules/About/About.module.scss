@@ -5,9 +5,6 @@
   @include content-padding-inline;
   @include page-grid;
 
-  // @include on-desktop {
-  //   column-gap: 64px;
-  // }
 }
 
 .breadCrumbs {
@@ -20,6 +17,7 @@
   align-items: center; 
   margin-bottom: 16px;
   grid-column: 1/-1;
+  cursor: pointer;
 }
 
 .back_text{

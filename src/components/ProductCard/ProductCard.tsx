@@ -9,9 +9,10 @@ import { useTheme } from '../../contexts/ThemeContext';
 
 type Props = {
   product: Product;
+  search?: string;
 };
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
+export const ProductCard: React.FC<Props> = ({ product, search }) => {
   const { t } = useTranslation();
 
   const {
@@ -58,11 +59,13 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         to={`../../${category}/${itemId}`}
         className={styles.product__image}
         style={{ backgroundImage: `url(/${image})` }}
+        state={{search}}
       />
 
       <Link
         to={`../../${category}/${itemId}`}
         className={styles.product__title}
+        state={{search}}
       >
         {name}
       </Link>

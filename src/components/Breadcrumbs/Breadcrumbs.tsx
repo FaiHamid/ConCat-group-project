@@ -28,7 +28,6 @@ export const Breadcrumbs: React.FC = () => {
       [classes.darkTheme]: theme === 'dark',
     })}>
       {breadcrumbs.map(({ match, breadcrumb }, index) => {
-        console.log('match:', match, 'breadcrumb', breadcrumb, 'index', index);
         return (
           <div key={match.pathname} className={classes.Breadcrumbs__container}>
             <Link to={match.pathname} className={classes.Breadcrumbs__link}>

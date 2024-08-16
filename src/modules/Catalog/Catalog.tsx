@@ -181,7 +181,7 @@ export const Catalog: React.FC = () => {
             })}
           >
             {currentItems.map(product => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} search={searchParams.toString()}/>
             ))}
           </div>
 

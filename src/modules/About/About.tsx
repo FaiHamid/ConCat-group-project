@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
 import cn from 'classnames';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './About.module.scss';
 import { Item, Product } from '../../types';
 import { getItems, getQuickProducts } from '../../api/dataFromServer';
@@ -16,8 +16,7 @@ import classNames from 'classnames';
 import { useTheme } from '../../contexts/ThemeContext';
 
 export const About: React.FC = () => {
-  // const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, state } = useLocation();
   const [item, setItem] = useState<Item | null>(null);
   const [product, setProduct] = useState<Product | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
@@ -26,11 +25,7 @@ export const About: React.FC = () => {
 
   const { t } = useTranslation();
 
-  // const navigate = useNavigate();
-
-  // const urlArr = pathname.split('-');
-  // const colorFromUrl = urlArr[urlArr.length - 1];
-  // const capacityFromUrl = urlArr[urlArr.length - 2];
+  const navigate = useNavigate();
 
   const category = pathname.split('/')[1];
   const itemId = pathname.split('/')[2];
@@ -62,9 +57,19 @@ export const About: React.FC = () => {
         console.error('There was a problem with the fetch operation:', error);
       });
   }, []);
-  // function goBack() {
-  //   navigate({ pathname })
-  // }
+
+  function goBack() {
+    const currentPath = location.pathname;
+    const pathSegments = currentPath.split('/').filter(Boolean); 
+
+    if (pathSegments.length > 1) {
+        const parentPath = '/' + pathSegments.slice(0, -1).join('/');
+        navigate({ pathname: parentPath, search: state?.search });
+    } else {
+        navigate('/');
+    }
+  }
+
   const newModels = [...products]
     .filter(
       device =>
@@ -95,7 +100,7 @@ export const About: React.FC = () => {
       <div className={styles.breadCrumbs}>
         <Breadcrumbs />
       </div>
-      <Link to="/" className={styles.back_link}>
+      <div className={styles.back_link} onClick={goBack}>
         <img
           src={`${theme === 'dark' 
             ? '/img/icons/Chevron(ArrowRight).svg'
@@ -105,7 +110,7 @@ export const About: React.FC = () => {
           className={styles.img_back}
         />
         <p className={styles.back_text}>{t('aboutPage.back')}</p>
-      </Link>
+      </div>
 
       {isLoading ? (
         <ThreeCircles
